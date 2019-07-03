@@ -96,6 +96,35 @@ package	riscv_pkg	is
 		);
 	end component;
 	
+	component breg_ula is
+		port (
+			din				:	in std_logic_vector(31 downto 0);
+			wren, clk, rst			:	in std_logic;
+			rs1, rs2, rd		:	in std_logic_vector(4 downto 0);
+			ALUOp				:	in std_logic_vector(1 downto 0);
+			ALUSrc			:	in std_logic;
+			imm				:	in std_logic_vector(31 downto 0);
+			
+			zero				:	out std_logic;
+			dout				:	out std_logic_vector(31 downto 0);
+			mem_data_write	:	out std_logic_vector(31 downto 0)
+		);
+	
+	end component;
+	
+	component memoria is
+		port(
+			DataAddress		:	in	std_logic_vector(31 downto 0);
+			DataMux		:	in std_logic_vector(31 downto 0);
+			WriteData	:	in std_logic_vector(31 downto 0);
+			MemWrite		:	in std_logic;
+			MemRead			:	in std_logic;
+			MemtoReg	:	in std_logic;
+			clock_mem		: 	in std_logic;
+			
+			dataout			:	out std_logic_vector(31 downto 0)
+		);
+	end component;
 	
 	component controle is
 		port(
