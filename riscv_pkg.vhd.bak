@@ -1,0 +1,133 @@
+library	ieee;
+use	ieee.std_logic_1164.all;
+use	ieee.numeric_std.all;
+package	riscv_pkg	is
+
+	component	ula	is
+		port	(	
+			opcode : in std_logic_vector(3 downto 0);
+			A, B : in std_logic_vector(31 downto 0);
+			Z : out std_logic_vector(31 downto 0);
+			zero : out std_logic
+		);
+	end	component;
+	
+	component genImm32 is
+		port (
+        instr : in std_logic_vector(31 downto 0);
+        imm32 : out std_logic_vector(31 downto 0)
+		  );
+	end	component;
+	
+	component controleULA	is
+		port	(
+			opin		:	in std_logic_vector(31 downto 0);
+			ALUOp		:	in std_logic_vector(1 downto 0);
+			
+			opout	:	out std_logic_vector(3 downto 0)
+		);
+	end	component;
+	
+	component	xregs	is
+		port	(
+			clk, wren, rst			: in std_logic;
+			rs1, rs2, rd			: in std_logic_vector(4 downto 0);
+			data						: in std_logic_vector(31 downto 0);
+			ro1, ro2					: out std_logic_vector(31 downto 0)
+		);
+	end component;
+	
+	component	mux_two_to_one is
+		port(
+			sel	:	in std_logic;
+			A		:	in std_logic_vector(31 downto 0);
+			B		:	in std_logic_vector(31 downto 0);
+			X		:	out std_logic_vector(31 downto 0)
+		);
+	end	component;
+	
+	component 	pc is
+		port(
+			din	:	in std_logic_vector(31 downto 0);
+			clock	:	in std_logic;
+			
+			dout	:	out std_logic_vector(31 downto 0)
+		);
+	end component;
+	
+	component 	memoriaIns	is
+		port(
+			address		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+			clock		: IN STD_LOGIC  := '1';
+			data		: IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+			wren		: IN STD_LOGIC ;
+			q		: OUT STD_LOGIC_VECTOR (31 DOWNTO 0)
+		);
+	end component;
+	
+	component memoriaDados is
+		PORT
+		(
+			address		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
+			clock		: IN STD_LOGIC  := '1';
+			data		: IN STD_LOGIC_VECTOR (31 DOWNTO 0);
+			wren		: IN STD_LOGIC ;
+			q		: OUT STD_LOGIC_VECTOR (31 DOWNTO 0)
+		);
+	end component;
+	
+	component somador is
+		port(
+			A	   : in std_logic_vector  (31 downto 0);
+			B	   : in std_logic_vector  (31 downto 0);
+			Z     : out std_logic_vector(31 downto 0)
+		);
+	end component;
+	
+	component fetch is
+		port(
+			pc_mais_4	:	in std_logic_vector(31 downto 0);
+			reg_dst		: 	in std_logic;
+			clock			:	in std_logic;
+			clock_mem	:	in std_logic;
+			
+			opcode		:	out std_logic_vector(5 downto 0);
+			r1,r2,r_out	:	out std_logic_vector(4 downto 0);
+			pc_out		: 	out std_logic_vector(31 downto 0);
+			imed_16		: 	out std_logic_vector(15 downto 0);
+			jump_out		:	out std_logic_vector(25 downto 0)
+		);
+	end component;
+	
+	component bregula is
+	
+		port (
+			din				:	in std_logic_vector(31 downto 0);
+			we, clk			:	in std_logic;
+			rs, rt, rd		:	in std_logic_vector(4 downto 0);
+			funct				: 	in std_logic_vector(5 downto 0);
+			opula				:	in std_logic_vector(3 downto 0);
+			ctr_ula_op			:	in std_logic;
+			imm_16			:	in std_logic_vector(15 downto 0);
+			ctr_ula_lui		:	in	std_logic;
+			zero				:	out std_logic;
+			ovfl				:	out std_logic;
+			dout				:	out std_logic_vector(31 downto 0);
+			imm_32			:	out std_logic_vector(31 downto 0);
+			mem_data_write	:	out std_logic_vector(31 downto 0);
+			ctrjr				:	out std_logic
+		);
+	
+	end component;
+	
+	component controle is
+		port(
+			opcode			:	in std_logic_vector(6 downto 0);
+		
+		ALUOp			:	out std_logic_vector(1 downto 0);
+		Branch,MemRead,MemtoReg,MemWrite,ALUSrc,RegWrite	:	out std_logic
+		);
+	end component;
+
+
+end	riscv_pkg;

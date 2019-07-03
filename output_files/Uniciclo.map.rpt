@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Uniciclo
-Tue Jul 02 22:46:39 2019
+Wed Jul 03 02:54:43 2019
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -42,7 +42,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jul 02 22:46:39 2019      ;
+; Analysis & Synthesis Status        ; Successful - Wed Jul 03 02:54:43 2019      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; Uniciclo                                   ;
 ; Top-level Entity Name              ; ula                                        ;
@@ -154,13 +154,14 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                              ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                       ; Library ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------+---------+
-; ula.vhd                          ; yes             ; User VHDL File  ; C:/Users/johpetsc/Documents/UnicicloRISC-V/ula.vhd ;         ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                    ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                             ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
+; ula.vhd                          ; yes             ; User VHDL File  ; C:/Users/johpetsc/Documents/UnicicloRISC-V/ula.vhd       ;         ;
+; riscv_pkg.vhd                    ; yes             ; User VHDL File  ; C:/Users/johpetsc/Documents/UnicicloRISC-V/riscv_pkg.vhd ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -247,7 +248,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Tue Jul 02 22:46:36 2019
+    Info: Processing started: Wed Jul 03 02:54:39 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Uniciclo -c Uniciclo
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file ula.vhd
@@ -272,6 +273,20 @@ Info (12021): Found 2 design units, including 1 entities, in source file control
 Info (12021): Found 2 design units, including 1 entities, in source file controleula.vhd
     Info (12022): Found design unit 1: controleULA-rtl
     Info (12023): Found entity 1: controleULA
+Info (12021): Found 2 design units, including 1 entities, in source file memoriains.vhd
+    Info (12022): Found design unit 1: memoriaIns-SYN
+    Info (12023): Found entity 1: memoriaIns
+Info (12021): Found 2 design units, including 1 entities, in source file memoriadados.vhd
+    Info (12022): Found design unit 1: memoriadados-SYN
+    Info (12023): Found entity 1: memoriaDados
+Info (12021): Found 1 design units, including 0 entities, in source file riscv_pkg.vhd
+    Info (12022): Found design unit 1: riscv_pkg
+Info (12021): Found 2 design units, including 1 entities, in source file pc.vhd
+    Info (12022): Found design unit 1: pc-rtl
+    Info (12023): Found entity 1: pc
+Info (12021): Found 2 design units, including 1 entities, in source file fetch.vhd
+    Info (12022): Found design unit 1: fetch-rtl
+    Info (12023): Found entity 1: fetch
 Info (12127): Elaborating entity "ula" for the top level hierarchy
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -280,9 +295,9 @@ Info (21057): Implemented 805 device resources after synthesis - the final resou
     Info (21059): Implemented 33 output pins
     Info (21061): Implemented 704 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4658 megabytes
-    Info: Processing ended: Tue Jul 02 22:46:39 2019
-    Info: Elapsed time: 00:00:03
+    Info: Peak virtual memory: 4651 megabytes
+    Info: Processing ended: Wed Jul 03 02:54:43 2019
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:03
 
 
