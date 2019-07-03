@@ -1,5 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
+use work.riscv_pkg.all;
 
 entity controle is
 	port(
