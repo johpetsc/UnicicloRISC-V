@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use	work.riscv_pkg.all;
 
-entity bregula is
+entity breg_ula is
 	
 	port (
 		din				:	in std_logic_vector(31 downto 0);
@@ -18,9 +18,9 @@ entity bregula is
 		mem_data_write	:	out std_logic_vector(31 downto 0)
 	);
 	
-end bregula;
+end breg_ula;
 
-architecture rtl of bregula is
+architecture rtl of breg_ula is
 
 signal r1, r2			:	std_logic_vector(31 downto 0);
 signal res_mux			:	std_logic_vector(31 downto 0);
