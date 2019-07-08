@@ -7,8 +7,10 @@ entity processador is
 	
 	port(
 		-- Ports	
-	
+		clock			: in std_logic;
+		clock_mem	: in std_logic
 	);
+	
 end processador;
 
 architecture rtl of processador is:
@@ -49,14 +51,14 @@ architecture rtl of processador is:
 	-- ULA
 	signal ula_result				: std_logic_vector(31 downto 0);
 	
-Begin
+begin
 	
 fetch: entity work.fetch port map(
 		
 	-- sinais do fetch => sinais do processador 
 	pc_mais_4 	=> pc_mais_4,
-	clock 		=> ,
-	clock_mem 	=> ,
+	clock 		=> clock,
+	clock_mem 	=> clock_mem,
 	opcode 		=> opcode,
 	rs1 			=> rs1,
 	rs2 			=> rs2,
@@ -71,7 +73,7 @@ breg_ula: entity work.breg_ula port map(
 	-- sinais do breg_ula => sinais do processador 
 	din 				=> ,
 	wren 				=> controle_reg_write,
-	clk 				=> ,
+	clk 				=> clock,
 	rst 				=> ,
 	rs1 				=> rs1,
 	rs2 				=> rs2,
@@ -109,7 +111,7 @@ memoria: entity work.memoria port map(
 	MemWrite 	=> controle_mem_write,
 	MemRead 		=> controle_mem_read,
 	MemtoReg 	=> controle_mem_to_reg,
-	clock_mem 	=> ,
+	clock_mem 	=> clock_mem,
 	dataout 		=> 
 		
 );
