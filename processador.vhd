@@ -8,7 +8,7 @@ entity processador is
 	port(
 		-- Ports	
 	
-	)
+	);
 end processador;
 
 architecture rtl of processador is:
