@@ -38,7 +38,7 @@ package	riscv_pkg	is
 		);
 	end component;
 	
-	component	mux_two_to_one is
+	component	mux is
 		port(
 			sel	:	in std_logic;
 			A		:	in std_logic_vector(31 downto 0);
@@ -50,7 +50,7 @@ package	riscv_pkg	is
 	component 	pc is
 		port(
 			pcin	:	in std_logic_vector(31 downto 0);
-			clock	:	in std_logic;
+			clock, pc_rst	:	in std_logic;
 			
 			pcout	:	out std_logic_vector(31 downto 0)
 		);
@@ -88,7 +88,7 @@ package	riscv_pkg	is
 	component fetch is
 		port(
 			pc_mais_4	:	in std_logic_vector(31 downto 0);
-			clock			:	in std_logic;
+			clock, pc_rst			:	in std_logic;
 			clock_mem	:	in std_logic;
 			
 			opcode		   :	out std_logic_vector(6 downto 0);
