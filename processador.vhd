@@ -13,7 +13,7 @@ entity processador is
 	
 end processador;
 
-architecture rtl of processador is:
+architecture rtl of processador is
 	
 	--Signals
 	
@@ -37,21 +37,32 @@ architecture rtl of processador is:
 	signal controle_mem_read	: std_logic;
 	signal controle_mem_to_reg	: std_logic;
 	signal controle_alu_op		: std_logic_vector(1 downto 0);
-	signal controle_ alu_out	: std_logic_vector(1 downto 0);
-	signal controle_ alu_in 	: std_logic_vector(3 downto 0);
+	signal controle_alu_out		: std_logic_vector(1 downto 0);
+	signal controle_alu_in 		: std_logic_vector(3 downto 0);
 	signal controle_mem_write	: std_logic;
 	signal controle_alu_src		: std_logic;
 	signal controle_reg_write	: std_logic;
 	signal controle_zero_ula	: std_logic;
+	signal controle_aux_or		: std_logic;
 	
-	-- Memoria
+	-- Memoria de dados
 	signal mem_data_out			: std_logic_vector(31 downto 0);
 	signal mem_to_reg				: std_logic_vector(31 downto 0);
 	
 	-- ULA
 	signal ula_result				: std_logic_vector(31 downto 0);
+	signal ula_from_mux			: std_logic_vector(31 downto 0);
+	
+	-- Memoria de instrucoes
+	signal instrucao				: std_logic_vector(31 downto 0);
+	
+	-- Imediato
+	signal imm						: std_logic_vector(31 downto 0);
+	signal imm_shiftado_1		: std_logic_vector(31 downto 0);
 	
 begin
+
+	controle_aux_or <= controle_branch or controle_zero_ula;
 	
 fetch: entity work.fetch port map(
 		
@@ -64,7 +75,7 @@ fetch: entity work.fetch port map(
 	rs2 			=> rs2,
 	rd 			=> rd,
 	pc_out 		=> pc_out,
-	imm 			=> 
+	imm 			=> imm
 	
 );
 
@@ -80,9 +91,9 @@ breg_ula: entity work.breg_ula port map(
 	rd 				=> rd,
 	ALUOp 			=> controle_alu_op,
 	ALUSrc 			=> controle_alu_src,
-	imm 				=> ,
+	imm 				=> imm,
 	zero 				=> controle_zero_ula,
-	dout 				=> ,
+	dout 				=> ula_result,
 	mem_data_write => 
 	
 		
@@ -106,14 +117,62 @@ memoria: entity work.memoria port map(
 		
 	-- sinais da memoria => sinais do processador
 	DataAddress => ula_result,
-	DataMux 		=> ,
+	DataMux 		=> mem_data_out,
 	WriteData 	=> r_out_2,
 	MemWrite 	=> controle_mem_write,
 	MemRead 		=> controle_mem_read,
 	MemtoReg 	=> controle_mem_to_reg,
 	clock_mem 	=> clock_mem,
-	dataout 		=> 
+	dataout 		=> mem_to_reg
 		
 );
+
+mux1: entity work.mux port map(
+	
+	-- sinais do mux => sinais do processador
+	sel => controle_alu_src,
+	A => r_out_2,
+	B => imm,
+	X => ula_from_mux
+		
+);
+
+mux2: entity work.mux port map(
+	
+	-- sinais do mux => sinais do processador
+	sel => controle_mem_to_reg,
+	A => ula_result,
+	B => mem_data_out,
+	X => mem_to_reg
+	
+);
+
+mux3: entity work.mux port map(
+	
+	-- sinais do mux => sinais do processador
+	sel => controle_aux_or,
+	A => pc_mais_4,
+	B => pc_jump,
+	X => pc_in
+);
+
+adder1: entity work.somador port map(
+	
+	-- sinais do somador => sinais do processador
+	A => pc_out,
+	B => 4,
+	Z => pc_mais_4
+	
+);
+
+adder2: entity work.somador port map(
+	
+	-- sinais do somador => sinais do processador
+	A => pc_out,
+	B => imm_shiftado_1,
+	Z => pc_jump
+	
+);
+
 
 end rtl;
