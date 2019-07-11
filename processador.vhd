@@ -82,7 +82,7 @@ fetch: entity work.fetch port map(
 breg_ula: entity work.breg_ula port map(
 		
 	-- sinais do breg_ula => sinais do processador 
-	din 				=> ,
+	din 				=> mem_to_reg,
 	wren 				=> controle_reg_write,
 	clk 				=> clock,
 	rst 				=> ,
@@ -94,7 +94,7 @@ breg_ula: entity work.breg_ula port map(
 	imm 				=> imm,
 	zero 				=> controle_zero_ula,
 	dout 				=> ula_result,
-	mem_data_write => 
+	mem_data_write => r_out_2
 	
 		
 );
