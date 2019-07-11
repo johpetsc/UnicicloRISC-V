@@ -63,6 +63,7 @@ architecture rtl of processador is
 begin
 
 	controle_aux_or <= controle_branch or controle_zero_ula;
+	imm_shiftado_1 <= imm(30 downto 0) & '0';
 	
 fetch: entity work.fetch port map(
 		
@@ -85,7 +86,7 @@ breg_ula: entity work.breg_ula port map(
 	din 				=> mem_to_reg,
 	wren 				=> controle_reg_write,
 	clk 				=> clock,
-	rst 				=> ,
+	rst 				=> '0',
 	rs1 				=> rs1,
 	rs2 				=> rs2,
 	rd 				=> rd,
@@ -160,7 +161,7 @@ adder1: entity work.somador port map(
 	
 	-- sinais do somador => sinais do processador
 	A => pc_out,
-	B => 4,
+	B => x"00000004",
 	Z => pc_mais_4
 	
 );
