@@ -42,6 +42,8 @@ pc: entity work.pc port map(
 memoriaIns: entity work.memoriaIns port map(
 	address	=>	pc_to_mem,
 	clock		=> clock_mem,
+	data 		=> X"00000000",
+	wren 		=> '0',
 	q			=>	q_out
 );
 
