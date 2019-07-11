@@ -23,9 +23,9 @@ architecture rtl of controleULA is
 
 	begin
 		if(ALUOp = "00") then -- LW e SW
-			aux <= "";
+			aux <= "0000";
 		elsif(ALUOp = "01") then --beq
-			aux <= "";
+			aux <= "0001";
 		else
 			case func is
 				when "0000"	=>	aux	<= "0000"; -- ADD
