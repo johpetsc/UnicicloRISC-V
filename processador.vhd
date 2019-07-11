@@ -24,37 +24,38 @@ architecture rtl of processador is
 	signal pc_out_aux					: std_logic_vector(31 downto 0) := X"00000000";
 	signal pc_mais_4_aux				: std_logic_vector(31 downto 0) := X"00000000";
 	signal pc_jump					: std_logic_vector(31 downto 0) := X"00000000";
+	signal pc_rst					: std_logic := '1';
 	
 	-- Registradores
-	signal rs1_aux						: std_logic_vector(4 downto 0);
-	signal rs2_aux				: std_logic_vector(4 downto 0);
-	signal rd_aux			   : std_logic_vector(4 downto 0);
-	signal r_out_2					: std_logic_vector(31 downto 0);
+	signal rs1_aux						: std_logic_vector(4 downto 0) := "00000";
+	signal rs2_aux				: std_logic_vector(4 downto 0) := "00000";
+	signal rd_aux			   : std_logic_vector(4 downto 0) := "00000";
+	signal r_out_2					: std_logic_vector(31 downto 0) := X"00000000";
 	
 	-- Controle
-	signal opcode_aux 					: std_logic_vector(6 downto 0);
-	signal controle_branch		: std_logic;
-	signal controle_mem_read	: std_logic;
-	signal controle_mem_to_reg	: std_logic;
-	signal controle_alu_op		: std_logic_vector(1 downto 0);
-	signal controle_alu_out		: std_logic_vector(1 downto 0);
-	signal controle_alu_in 		: std_logic_vector(3 downto 0);
-	signal controle_mem_write	: std_logic;
-	signal controle_alu_src		: std_logic;
-	signal controle_reg_write	: std_logic;
-	signal controle_zero_ula	: std_logic;
-	signal controle_aux_or		: std_logic;
+	signal opcode_aux 			: std_logic_vector(6 downto 0) := "0000000";
+	signal controle_branch		: std_logic := '0';
+	signal controle_mem_read	: std_logic := '0';
+	signal controle_mem_to_reg	: std_logic := '0';
+	signal controle_alu_op		: std_logic_vector(1 downto 0) := "00";
+	signal controle_alu_out		: std_logic_vector(1 downto 0) := "00";
+	signal controle_alu_in 		: std_logic_vector(3 downto 0) := "0000";
+	signal controle_mem_write	: std_logic := '0';
+	signal controle_alu_src		: std_logic := '0';
+	signal controle_reg_write	: std_logic := '0';
+	signal controle_zero_ula	: std_logic := '0';
+	signal controle_aux_or		: std_logic := '0';
 	
 	-- Memoria de dados
-	signal mem_to_reg				: std_logic_vector(31 downto 0);
+	signal mem_to_reg				: std_logic_vector(31 downto 0) := X"00000000";
 	
 	-- ULA
-	signal ula_result				: std_logic_vector(31 downto 0);
+	signal ula_result				: std_logic_vector(31 downto 0) := X"00000000";
 	
 	-- Imediato
-	signal imm_out						: std_logic_vector(31 downto 0);
-	signal imm_shiftado_1		: std_logic_vector(31 downto 0);
-	signal imm_result				: signed(31 downto 0);
+	signal imm_out						: std_logic_vector(31 downto 0) := X"00000000";
+	signal imm_shiftado_1		: std_logic_vector(31 downto 0) := X"00000000";
+	signal imm_result				: signed(31 downto 0) := X"00000000";
 	
 begin
 
@@ -72,7 +73,8 @@ fetch: entity work.fetch port map(
 	rs2 			=> rs2_aux,
 	rd 			=> rd_aux,
 	pc_out 		=> pc_out_aux,
-	imm 			=> imm_out
+	imm 			=> imm_out,
+	pc_rst		=> pc_rst
 	
 );
 

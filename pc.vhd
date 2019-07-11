@@ -5,10 +5,10 @@ use work.riscv_pkg.all;
 
 entity pc is
 	port(
-		pcin	:	in std_logic_vector(31 downto 0);
-		clock	:	in std_logic;
+		pcin	:	in std_logic_vector(31 downto 0) := x"00000000";
+		clock, pc_rst	:	in std_logic;
 		
-		pcout	:	out std_logic_vector(31 downto 0)
+		pcout	:	out std_logic_vector(31 downto 0) := X"00000000"
 	);
 end pc;
 
@@ -18,7 +18,9 @@ architecture rtl of pc is
 	
 	proc_pc: process (clock)
 	begin
-		if rising_edge(clock) then
+		if pc_rst = '1' then
+			pcout <= X"00000000";
+		elsif rising_edge(clock) then
 			pcout <= pcin;
 		end if;
 	end process;
