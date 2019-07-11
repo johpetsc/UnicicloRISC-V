@@ -24,8 +24,22 @@ architecture rtl of controleULA is
 	begin
 		if(ALUOp = "00") then -- LW e SW
 			aux <= "0000";
-		elsif(ALUOp = "01") then --beq
-			aux <= "0001";
+		elsif(ALUOp = "01") then --branch
+			case func(2 downto 0) is 
+				when "000" =>  aux <= "0001"; -- beq
+				when "100" =>  aux <= "1000"; -- blt
+				when "001" =>  aux <= "1101"; -- bne
+				when "101" =>  aux <= "1010"; -- bge
+				when others => aux <= "1111"; 
+				end case;
+			
+		elsif(ALUOp = "11") then -- Jumps
+			case opin(6 downto 0) is
+				when "1101111" => aux <= "1111"; -- jal
+				when "1100111" => aux <= "1111"; -- jalr
+				when others => aux <= "1111";
+			end case;
+				
 		else
 			case func is
 				when "0000"	=>	aux	<= "0000"; -- ADD

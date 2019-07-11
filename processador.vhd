@@ -61,7 +61,7 @@ begin
 
 	pc_rst <= '0';
 	controle_aux_and <= controle_branch and controle_zero_ula;
-	imm_shiftado_1 <= std_logic_vector(imm_result(30 downto 0) & '0');
+	imm_shiftado_1 <= std_logic_vector(imm_result(31 downto 0));
 	
 fetch: entity work.fetch port map(
 		

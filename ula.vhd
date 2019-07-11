@@ -13,6 +13,7 @@ end entity;
 
 architecture behavioral of ula is
 	signal MSB : natural;
+	signal aux_jalr : std_logic := '0';
 
 begin
 	
@@ -88,11 +89,15 @@ begin
 									auxZ := (others => '0');
 								end if;
 			
-			when others => auxZ := (others => '0');
+			when others => 
+			aux_jalr <= '1';
+			auxZ := std_logic_vector(signed(A) + signed(B));
+			
 		end case;
 		
-		if(auxZ = X"00000000") then
+		if(auxZ = X"00000000" or aux_jalr = '1') then
 			zero <= '1';
+			aux_jalr <= '0';
 		else
 			zero <= '0';
 		end if;
