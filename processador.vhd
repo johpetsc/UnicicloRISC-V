@@ -18,21 +18,21 @@ architecture rtl of processador is
 	--Signals
 	
 	-- PC's
-	signal pc_in					: std_logic_vector(31 downto 0);
-	signal pc_out					: std_logic_vector(31 downto 0);
-	signal pc_mais_4				: std_logic_vector(31 downto 0);
-	signal pc_jump					: std_logic_vector(31 downto 0);
+	signal pc_in					: std_logic_vector(31 downto 0) := X"00000000";
+	signal pc_out					: std_logic_vector(31 downto 0) := X"00000000";
+	signal pc_mais_4					: std_logic_vector(31 downto 0) := X"00000000";
+	signal pc_out_aux					: std_logic_vector(31 downto 0) := X"00000000";
+	signal pc_mais_4_aux				: std_logic_vector(31 downto 0) := X"00000000";
+	signal pc_jump					: std_logic_vector(31 downto 0) := X"00000000";
 	
 	-- Registradores
-	signal rs1						: std_logic_vector(4 downto 0);
-	signal rs2						: std_logic_vector(4 downto 0);
-	signal rd					   : std_logic_vector(4 downto 0);
-	signal r_out_1					: std_logic_vector(31 downto 0);
+	signal rs1_aux						: std_logic_vector(4 downto 0);
+	signal rs2_aux				: std_logic_vector(4 downto 0);
+	signal rd_aux			   : std_logic_vector(4 downto 0);
 	signal r_out_2					: std_logic_vector(31 downto 0);
-	signal r_out_2_ou_imm		: std_logic_vector(31 downto 0);
 	
 	-- Controle
-	signal opcode 					: std_logic_vector(6 downto 0);
+	signal opcode_aux 					: std_logic_vector(6 downto 0);
 	signal controle_branch		: std_logic;
 	signal controle_mem_read	: std_logic;
 	signal controle_mem_to_reg	: std_logic;
@@ -46,37 +46,33 @@ architecture rtl of processador is
 	signal controle_aux_or		: std_logic;
 	
 	-- Memoria de dados
-	signal mem_data_out			: std_logic_vector(31 downto 0);
 	signal mem_to_reg				: std_logic_vector(31 downto 0);
 	
 	-- ULA
 	signal ula_result				: std_logic_vector(31 downto 0);
-	signal ula_from_mux			: std_logic_vector(31 downto 0);
-	
-	-- Memoria de instrucoes
-	signal instrucao				: std_logic_vector(31 downto 0);
 	
 	-- Imediato
-	signal imm						: std_logic_vector(31 downto 0);
+	signal imm_out						: std_logic_vector(31 downto 0);
 	signal imm_shiftado_1		: std_logic_vector(31 downto 0);
+	signal imm_result				: signed(31 downto 0);
 	
 begin
 
 	controle_aux_or <= controle_branch or controle_zero_ula;
-	imm_shiftado_1 <= imm(30 downto 0) & '0';
+	imm_shiftado_1 <= std_logic_vector(imm_result(30 downto 0) & '0');
 	
 fetch: entity work.fetch port map(
 		
 	-- sinais do fetch => sinais do processador 
-	pc_mais_4 	=> pc_mais_4,
+	pc_mais_4 	=> pc_in,
 	clock 		=> clock,
 	clock_mem 	=> clock_mem,
-	opcode 		=> opcode,
-	rs1 			=> rs1,
-	rs2 			=> rs2,
-	rd 			=> rd,
-	pc_out 		=> pc_out,
-	imm 			=> imm
+	opcode 		=> opcode_aux,
+	rs1 			=> rs1_aux,
+	rs2 			=> rs2_aux,
+	rd 			=> rd_aux,
+	pc_out 		=> pc_out_aux,
+	imm 			=> imm_out
 	
 );
 
@@ -85,16 +81,17 @@ breg_ula: entity work.breg_ula port map(
 	-- sinais do breg_ula => sinais do processador 
 	din 				=> mem_to_reg,
 	wren 				=> controle_reg_write,
-	clk 				=> clock,
+	clk 				=> clock_mem,
 	rst 				=> '0',
-	rs1 				=> rs1,
-	rs2 				=> rs2,
-	rd 				=> rd,
+	rs1 				=> rs1_aux,
+	rs2 				=> rs2_aux,
+	rd 				=> rd_aux,
 	ALUOp 			=> controle_alu_op,
 	ALUSrc 			=> controle_alu_src,
-	imm 				=> imm,
+	imm 				=> imm_out,
 	zero 				=> controle_zero_ula,
 	dout 				=> ula_result,
+	immout			=> imm_result,
 	mem_data_write => r_out_2
 	
 		
@@ -103,7 +100,7 @@ breg_ula: entity work.breg_ula port map(
 controle: entity work.controle port map(
 		
 	-- sinais do controle => sinais do processador
-	opcode 	=> opcode,
+	opcode 	=> opcode_aux,
 	ALUOp 	=> controle_alu_op,
 	Branch 	=> controle_branch,
 	MemRead 	=> controle_mem_read,
@@ -118,7 +115,7 @@ memoria: entity work.memoria port map(
 		
 	-- sinais da memoria => sinais do processador
 	DataAddress => ula_result,
-	DataMux 		=> mem_data_out,
+	DataMux 		=> ula_result,
 	WriteData 	=> r_out_2,
 	MemWrite 	=> controle_mem_write,
 	MemRead 		=> controle_mem_read,
@@ -128,31 +125,11 @@ memoria: entity work.memoria port map(
 		
 );
 
-mux1: entity work.mux port map(
-	
-	-- sinais do mux => sinais do processador
-	sel => controle_alu_src,
-	A => r_out_2,
-	B => imm,
-	X => ula_from_mux
-		
-);
-
-mux2: entity work.mux port map(
-	
-	-- sinais do mux => sinais do processador
-	sel => controle_mem_to_reg,
-	A => ula_result,
-	B => mem_data_out,
-	X => mem_to_reg
-	
-);
-
 mux3: entity work.mux port map(
 	
 	-- sinais do mux => sinais do processador
 	sel => controle_aux_or,
-	A => pc_mais_4,
+	A => pc_mais_4_aux,
 	B => pc_jump,
 	X => pc_in
 );
@@ -160,16 +137,16 @@ mux3: entity work.mux port map(
 adder1: entity work.somador port map(
 	
 	-- sinais do somador => sinais do processador
-	A => pc_out,
+	A => pc_out_aux,
 	B => x"00000004",
-	Z => pc_mais_4
+	Z => pc_mais_4_aux
 	
 );
 
 adder2: entity work.somador port map(
 	
 	-- sinais do somador => sinais do processador
-	A => pc_out,
+	A => pc_out_aux,
 	B => imm_shiftado_1,
 	Z => pc_jump
 	

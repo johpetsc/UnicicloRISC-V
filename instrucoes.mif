@@ -12,36 +12,27 @@
 -- Altera or its authorized distributors.  Please refer to the 
 -- applicable agreement for further details.
 
--- Quartus II generated Memory Initialization File (.mif)
 
+-- Quartus II generated Memory Initialization File (.mif)
 WIDTH=32;
 DEPTH=256;
-
 ADDRESS_RADIX=HEX;
 DATA_RADIX=HEX;
-
 CONTENT BEGIN
-00 : 00002297;
-01 : 00028293;
-02 : 00002317;
-03 : 01830313;
-04 : 00032303;
-05 : 00400893;
-06 : 00002517;
-07 : 00c50513;
-08 : 00000073;
-09 : 02030663;
-0A : 00100893;
-0B : 0002a503;
-0C : 00000073;
-0D : 00400893;
-0E : 00002517;
-0F : 01450513;
-10 : 00000073;
-11 : 00428293;
-12 : fff30313;
-13 : fd9ff06f;
-14 : 00a00893;
-15 : 00000073;
-[16..FF]  :   00000000;
+00 : 03800293;
+01 : fc728313;
+02 : 0ffffe37;
+03 : fff2ae93;
+04 : fff2bf13;
+05 : 0312ff93;
+06 : 0262e493;
+07 : 0592c413;
+08 : 000003b3;
+09 : 00000e33;
+0A : 007e0263;
+0B : 000003b3;
+0C : 001e8e93;
+0D : 01d3a023;
+0E : ff5ff06f;
+[0F..FF] : 00000000;
 END;

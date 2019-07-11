@@ -38,10 +38,11 @@ architecture rtl of controleULA is
 				when "1101"	=> aux	<= "0111"; -- SRA
 				when "0010"	=>	aux	<= "1000"; -- SLT
 				when "0011"	=> aux 	<= "1001"; -- SLTU
-				when ""	=> aux 	<= "1010"; -- SGE
-				when ""	=> aux 	<= "1011"; -- SGEU
-				when ""	=> aux 	<= "1100"; -- SEQ
-				when ""	=> aux 	<= "1101"; -- SNE
+				--when ""	=> aux 	<= "1010"; -- SGE
+				--when ""	=> aux 	<= "1011"; -- SGEU
+				--when ""	=> aux 	<= "1100"; -- SEQ
+				--when ""	=> aux 	<= "1101"; -- SNE
+				when others => aux   <= "1111";
 			end case;
 		end if;
 	end process;

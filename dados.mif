@@ -13,33 +13,11 @@
 -- applicable agreement for further details.
 
 -- Quartus II generated Memory Initialization File (.mif)
-
 WIDTH=32;
 DEPTH=256;
-
 ADDRESS_RADIX=HEX;
 DATA_RADIX=HEX;
-
 CONTENT BEGIN
-00 : 00000001;
-01 : 00000003;
-02 : 00000005;
-03 : 00000007;
-04 : 0000000b;
-05 : 0000000d;
-06 : 00000011;
-07 : 00000013;
-08 : 00000008;
-09 : 6f20734f;
-0A : 206f7469;
-0B : 6d697270;
-0C : 6f726965;
-0D : 756e2073;
-0E : 6f72656d;
-0F : 72702073;
-10 : 736f6d69;
-11 : 6f617320;
-12 : 00203a20;
-13 : 00000020;
-[14..FF] : 00000000;
+00 : 00000038;
+[01..FF] : 00000000;
 END;

@@ -18,7 +18,7 @@ architecture behavioral of controle is
 	proc_controle:	process	(opcode)
 		begin
 			case opcode is
-				when	"000000" =>	-- Tipo R
+				when	"0110011" =>	-- Tipo R
 					Branch 		<= '0';
 					MemRead 		<= '0';
 					MemtoReg 	<= '0';
@@ -27,7 +27,7 @@ architecture behavioral of controle is
 					RegWrite		<= '1';
 					ALUOp			<= "10";
 					
-				when	"100011" =>	-- LW
+				when	"0000011" =>	-- LW
 					Branch 		<= '0';
 					MemRead 		<= '1';
 					MemtoReg 	<= '1';
@@ -36,7 +36,7 @@ architecture behavioral of controle is
 					RegWrite		<= '1';
 					ALUOp			<= "00";
 				
-				when	"101011" =>	-- SW
+				when	"0100011" =>	-- SW
 					Branch 		<= '0';
 					MemRead 		<= '0';
 					MemtoReg 	<= '0';
@@ -45,7 +45,7 @@ architecture behavioral of controle is
 					RegWrite		<= '0';
 					ALUOp			<= "00";
 				
-				when	"000100" => -- Beq
+				when	"1100011" => -- Beq
 					Branch 		<= '1';
 					MemRead 		<= '0';
 					MemtoReg 	<= '0';

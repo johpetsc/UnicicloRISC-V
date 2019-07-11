@@ -15,6 +15,7 @@ entity breg_ula is
 		
 		zero				:	out std_logic;
 		dout				:	out std_logic_vector(31 downto 0);
+		immout			:  out signed(31 downto 0);
 		mem_data_write	:	out std_logic_vector(31 downto 0)
 	);
 	
@@ -24,11 +25,12 @@ architecture rtl of breg_ula is
 
 signal r1, r2			:	std_logic_vector(31 downto 0);
 signal res_mux			:	std_logic_vector(31 downto 0);
-signal imm32_aux			:	std_logic_vector(31 downto 0);
+signal imm32_aux			:	signed(31 downto 0);
 signal op			:	std_logic_vector(3 downto 0);
 
 begin
 	mem_data_write	<= r2;
+	immout <= imm32_aux;
 
 ula: entity work.ula port map(
 	opcode	=>	op,
@@ -63,7 +65,7 @@ genImm32: entity work.genImm32 port map(
 
 mux: entity work.mux port map(
 	A			=> r2,
-	B			=> imm32_aux,
+	B			=> std_logic_vector(imm32_aux),
 	sel		=> ALUSrc,
 	X			=> res_mux
 );

@@ -109,6 +109,7 @@ package	riscv_pkg	is
 			
 			zero				:	out std_logic;
 			dout				:	out std_logic_vector(31 downto 0);
+			immout			:  out signed(31 downto 0);
 			mem_data_write	:	out std_logic_vector(31 downto 0)
 		);
 	
