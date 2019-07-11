@@ -44,7 +44,7 @@ architecture rtl of processador is
 	signal controle_alu_src		: std_logic := '0';
 	signal controle_reg_write	: std_logic := '0';
 	signal controle_zero_ula	: std_logic := '0';
-	signal controle_aux_or		: std_logic := '0';
+	signal controle_aux_and		: std_logic := '0';
 	
 	-- Memoria de dados
 	signal mem_to_reg				: std_logic_vector(31 downto 0) := X"00000000";
@@ -59,7 +59,8 @@ architecture rtl of processador is
 	
 begin
 
-	controle_aux_or <= controle_branch or controle_zero_ula;
+	pc_rst <= '0';
+	controle_aux_and <= controle_branch and controle_zero_ula;
 	imm_shiftado_1 <= std_logic_vector(imm_result(30 downto 0) & '0');
 	
 fetch: entity work.fetch port map(
@@ -130,7 +131,7 @@ memoria: entity work.memoria port map(
 mux3: entity work.mux port map(
 	
 	-- sinais do mux => sinais do processador
-	sel => controle_aux_or,
+	sel => controle_aux_and,
 	A => pc_mais_4_aux,
 	B => pc_jump,
 	X => pc_in

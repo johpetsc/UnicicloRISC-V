@@ -1,5 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 use work.riscv_pkg.all;
 
 entity mux is
@@ -13,17 +14,16 @@ entity mux is
 end mux;
 
 architecture behavioral of mux is
-
-	begin
+	signal A_mux, B_mux, X_mux : std_logic_vector(31 downto 0);
+	signal sel_mux : std_logic;
 	
-	proc_mux: process (sel)
 	begin
-		if	(sel = '0') then
-			X	<=	A;
-		elsif (sel = '1') then
-			X	<= B;
-		else
-			X 	<= X"00000000";
-		end if;
-	end process;
+			A_mux <= A;
+			B_mux <= B;
+			X <= X_mux;
+			
+			sel_mux <= sel;
+			
+			X_mux <= A_mux when sel_mux = '0' 
+			else B_mux ;
 end behavioral;

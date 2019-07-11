@@ -1,0 +1,615 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\bitte\Prog\UnicicloRISC-V\simulation\modelsim
+Ebreg_ula
+Z1 w1562847874
+Z2 DPx4 work 9 riscv_pkg 0 22 jN[OV1QnM:4i;n6i8[zeR0
+Z3 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z4 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z5 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z6 dC:\Users\bitte\Prog\UnicicloRISC-V\simulation\modelsim
+Z7 8C:/Users/bitte/Prog/UnicicloRISC-V/breg_ula.vhd
+Z8 FC:/Users/bitte/Prog/UnicicloRISC-V/breg_ula.vhd
+l0
+L6
+V@hn:Sd1Bk?0zREJCbV5n83
+Z9 OV;C;10.1d;51
+31
+Z10 !s108 1562858410.157000
+Z11 !s90 -reportprogress|300|-93|-work|work|C:/Users/bitte/Prog/UnicicloRISC-V/breg_ula.vhd|
+Z12 !s107 C:/Users/bitte/Prog/UnicicloRISC-V/breg_ula.vhd|
+Z13 o-93 -work work -O0
+Z14 tExplicit 1
+!s100 YGJgTDzFjM<V?S]YE328_0
+!i10b 1
+Artl
+Z15 DEx4 work 3 mux 0 22 1HSK`Da7KS]dmS>MI6?1Y1
+Z16 DEx4 work 8 genimm32 0 22 jM2JBNoNiZecg21NeBIa^2
+Z17 DEx4 work 11 controleula 0 22 Vc`j_^EPZDgi51`:DIOeS0
+Z18 DEx4 work 5 xregs 0 22 _k=JV781U4K]bm7QARcW70
+Z19 DEx4 work 3 ula 0 22 ?3R]l@MOWZQ6glCMLHY^h0
+R2
+R3
+R4
+R5
+Z20 DEx4 work 8 breg_ula 0 22 @hn:Sd1Bk?0zREJCbV5n83
+l31
+L24
+V5ZFn[njf==NP@H]3CmO2i3
+R9
+31
+R10
+R11
+R12
+R13
+R14
+!s100 7I`_1FYIgaSU6C]VQ8E6Y1
+!i10b 1
+Econtrole
+R1
+R3
+R2
+R4
+R5
+R6
+Z21 8C:/Users/bitte/Prog/UnicicloRISC-V/controle.vhd
+Z22 FC:/Users/bitte/Prog/UnicicloRISC-V/controle.vhd
+l0
+L5
+VWN<iGh=DEVJmb2Jhk3B?M0
+R9
+31
+Z23 !s108 1562858409.849000
+Z24 !s90 -reportprogress|300|-93|-work|work|C:/Users/bitte/Prog/UnicicloRISC-V/controle.vhd|
+Z25 !s107 C:/Users/bitte/Prog/UnicicloRISC-V/controle.vhd|
+R13
+R14
+!s100 WHi:6UhOeKW9M4;CnA2QC2
+!i10b 1
+Abehavioral
+R3
+R2
+R4
+R5
+Z26 DEx4 work 8 controle 0 22 WN<iGh=DEVJmb2Jhk3B?M0
+l16
+L14
+Vb^OZUkKmM=[f==090Wz]93
+R9
+31
+R23
+R24
+R25
+R13
+R14
+!s100 k]Ke_Y^C_QOTgNTG7aiJf2
+!i10b 1
+Econtroleula
+R1
+R2
+R3
+R4
+R5
+R6
+Z27 8C:/Users/bitte/Prog/UnicicloRISC-V/controleULA.vhd
+Z28 FC:/Users/bitte/Prog/UnicicloRISC-V/controleULA.vhd
+l0
+L6
+VVc`j_^EPZDgi51`:DIOeS0
+R9
+31
+Z29 !s108 1562858409.927000
+Z30 !s90 -reportprogress|300|-93|-work|work|C:/Users/bitte/Prog/UnicicloRISC-V/controleULA.vhd|
+Z31 !s107 C:/Users/bitte/Prog/UnicicloRISC-V/controleULA.vhd|
+R13
+R14
+!s100 m?44VAJGifmGVHYdCB8Ml2
+!i10b 1
+Artl
+R2
+R3
+R4
+R5
+R17
+l19
+L15
+VZcHeo;Z<?H;STXIdZ]Pi_1
+R9
+31
+R29
+R30
+R31
+R13
+R14
+!s100 Rd7DcITSm<b?bIeOI3E2B2
+!i10b 1
+Efetch
+Z32 w1562853207
+R2
+R3
+R4
+R5
+R6
+Z33 8C:/Users/bitte/Prog/UnicicloRISC-V/fetch.vhd
+Z34 FC:/Users/bitte/Prog/UnicicloRISC-V/fetch.vhd
+l0
+L6
+VjWI6z>:=>R[B8O^;U?3BT3
+R9
+31
+Z35 !s108 1562858410.079000
+Z36 !s90 -reportprogress|300|-93|-work|work|C:/Users/bitte/Prog/UnicicloRISC-V/fetch.vhd|
+Z37 !s107 C:/Users/bitte/Prog/UnicicloRISC-V/fetch.vhd|
+R13
+R14
+!s100 mHPPzRY@Va6dE;_X7k79z0
+!i10b 1
+Artl
+Z38 DEx4 work 10 memoriains 0 22 0IO2QAcozKmJHg[G_b?8n1
+Z39 DEx4 work 2 pc 0 22 ez:zBGBG`Nf<@jM574F4G2
+R2
+R3
+R4
+R5
+Z40 DEx4 work 5 fetch 0 22 jWI6z>:=>R[B8O^;U?3BT3
+l27
+L21
+VM>9JYzbb;0XT]H>P>4]K_1
+R9
+31
+R35
+R36
+R37
+R13
+R14
+!s100 bnUAEZ6I9f===]WNl;[2Z1
+!i10b 1
+Egenimm32
+R1
+R3
+R4
+R5
+R6
+Z41 8C:/Users/bitte/Prog/UnicicloRISC-V/genImm32.vhd
+Z42 FC:/Users/bitte/Prog/UnicicloRISC-V/genImm32.vhd
+l0
+L5
+VjM2JBNoNiZecg21NeBIa^2
+R9
+31
+Z43 !s108 1562858409.214000
+Z44 !s90 -reportprogress|300|-93|-work|work|C:/Users/bitte/Prog/UnicicloRISC-V/genImm32.vhd|
+Z45 !s107 C:/Users/bitte/Prog/UnicicloRISC-V/genImm32.vhd|
+R13
+R14
+!s100 abESU6F3iX89?6KYOSaO@1
+!i10b 1
+Aarch_gen
+R3
+R4
+R5
+R16
+l17
+L12
+V1h6nGHKZ_VS^cfEi5VeSo3
+R9
+31
+R43
+R44
+R45
+R13
+R14
+!s100 c9eh72XMcXfc0HAmFzz3N0
+!i10b 1
+Ememoria
+R1
+R2
+R3
+R4
+R5
+R6
+Z46 8C:/Users/bitte/Prog/UnicicloRISC-V/memoria.vhd
+Z47 FC:/Users/bitte/Prog/UnicicloRISC-V/memoria.vhd
+l0
+L6
+V5TfBI2kK`9zlQ]c^4fhdi0
+R9
+31
+Z48 !s108 1562858410.235000
+Z49 !s90 -reportprogress|300|-93|-work|work|C:/Users/bitte/Prog/UnicicloRISC-V/memoria.vhd|
+Z50 !s107 C:/Users/bitte/Prog/UnicicloRISC-V/memoria.vhd|
+R13
+R14
+!s100 2VZX]<X;fM<MfTZzf=L`]3
+!i10b 1
+Artl
+R15
+Z51 DEx4 work 12 memoriadados 0 22 `9QanIGT?5?^CR5VoCc0K0
+R2
+R3
+R4
+R5
+Z52 DEx4 work 7 memoria 0 22 5TfBI2kK`9zlQ]c^4fhdi0
+l26
+L20
+V_?DjhDJ;G8Lh;iSO?@LaP2
+R9
+31
+R48
+R49
+R50
+R13
+R14
+!s100 Unnj??3[nl;iGNG<9hd]_3
+!i10b 1
+Ememoriadados
+R1
+R4
+R5
+R6
+Z53 8C:/Users/bitte/Prog/UnicicloRISC-V/memoriaDados.vhd
+Z54 FC:/Users/bitte/Prog/UnicicloRISC-V/memoriaDados.vhd
+l0
+L42
+V`9QanIGT?5?^CR5VoCc0K0
+R9
+31
+Z55 !s108 1562858409.371000
+Z56 !s90 -reportprogress|300|-93|-work|work|C:/Users/bitte/Prog/UnicicloRISC-V/memoriaDados.vhd|
+Z57 !s107 C:/Users/bitte/Prog/UnicicloRISC-V/memoriaDados.vhd|
+R13
+R14
+!s100 gcCR2FI>O<gcIf4T?2j`81
+!i10b 1
+Asyn
+R4
+R5
+R51
+l86
+L54
+VRz_[>0m0gna5d@KUjYaZ]3
+R9
+31
+R55
+R56
+R57
+R13
+R14
+!s100 eKhF<OGeG[>A_d`3AiOga2
+!i10b 1
+Ememoriains
+R1
+R4
+R5
+R6
+Z58 8C:/Users/bitte/Prog/UnicicloRISC-V/memoriaIns.vhd
+Z59 FC:/Users/bitte/Prog/UnicicloRISC-V/memoriaIns.vhd
+l0
+L42
+V0IO2QAcozKmJHg[G_b?8n1
+R9
+31
+Z60 !s108 1562858409.290000
+Z61 !s90 -reportprogress|300|-93|-work|work|C:/Users/bitte/Prog/UnicicloRISC-V/memoriaIns.vhd|
+Z62 !s107 C:/Users/bitte/Prog/UnicicloRISC-V/memoriaIns.vhd|
+R13
+R14
+!s100 IR;jg0^Ed]LE0I2DUa8ZX0
+!i10b 1
+Asyn
+R4
+R5
+R38
+l86
+L54
+VXE4YV4Xe2EGj>4z]ZRle;3
+R9
+31
+R60
+R61
+R62
+R13
+R14
+!s100 CK<E:2eITi8RoL5hWH8G=2
+!i10b 1
+Emux
+Z63 w1562857562
+R2
+R3
+R4
+R5
+R6
+Z64 8C:/Users/bitte/Prog/UnicicloRISC-V/mux.vhd
+Z65 FC:/Users/bitte/Prog/UnicicloRISC-V/mux.vhd
+l0
+L6
+V1HSK`Da7KS]dmS>MI6?1Y1
+R9
+31
+Z66 !s108 1562858409.671000
+Z67 !s90 -reportprogress|300|-93|-work|work|C:/Users/bitte/Prog/UnicicloRISC-V/mux.vhd|
+Z68 !s107 C:/Users/bitte/Prog/UnicicloRISC-V/mux.vhd|
+R13
+R14
+!s100 5VzMnic0R[mhM5:??TRNn1
+!i10b 1
+Abehavioral
+R2
+R3
+R4
+R5
+R15
+l20
+L16
+V>m3`JK]]Ce49dHQGc=Yc23
+R9
+31
+R66
+R67
+R68
+R13
+R14
+!s100 0H:f9]C:nO=QMkVk1L>Zg2
+!i10b 1
+Epc
+Z69 w1562854785
+R2
+R3
+R4
+R5
+R6
+Z70 8C:/Users/bitte/Prog/UnicicloRISC-V/pc.vhd
+Z71 FC:/Users/bitte/Prog/UnicicloRISC-V/pc.vhd
+l0
+L6
+Vez:zBGBG`Nf<@jM574F4G2
+R9
+31
+Z72 !s108 1562858410.003000
+Z73 !s90 -reportprogress|300|-93|-work|work|C:/Users/bitte/Prog/UnicicloRISC-V/pc.vhd|
+Z74 !s107 C:/Users/bitte/Prog/UnicicloRISC-V/pc.vhd|
+R13
+R14
+!s100 RCC:GP5f8F[S<bQOLjkEm2
+!i10b 1
+Artl
+R2
+R3
+R4
+R5
+R39
+l17
+L15
+V?eod1L095EloXJQ9Ock_g0
+R9
+31
+R72
+R73
+R74
+R13
+R14
+!s100 LFco:zDm]PX2GjPdz=enW3
+!i10b 1
+Eprocessador
+Z75 w1562858401
+R2
+R5
+R4
+R3
+R6
+Z76 8C:/Users/bitte/Prog/UnicicloRISC-V/processador.vhd
+Z77 FC:/Users/bitte/Prog/UnicicloRISC-V/processador.vhd
+l0
+L6
+VBo]gE^RgoMLa=21jhDDLK0
+R9
+31
+Z78 !s108 1562858410.314000
+Z79 !s90 -reportprogress|300|-93|-work|work|C:/Users/bitte/Prog/UnicicloRISC-V/processador.vhd|
+Z80 !s107 C:/Users/bitte/Prog/UnicicloRISC-V/processador.vhd|
+R13
+R14
+!s100 [XN6XEzEOVS0QjQg;hhfW0
+!i10b 1
+Artl
+Z81 DEx4 work 7 somador 0 22 :T=zIGhznEe=g6iZa2JS32
+R15
+R52
+R26
+R20
+R40
+R2
+R5
+R4
+R3
+DEx4 work 11 processador 0 22 Bo]gE^RgoMLa=21jhDDLK0
+l60
+L16
+VA;=K9=ScWdOB2chC>hK8P3
+R9
+31
+R78
+R79
+R80
+R13
+R14
+!s100 Iab=i[A1Lidzifb^=jOfl1
+!i10b 1
+Eprocessador_tb
+R1
+R3
+R2
+R4
+R5
+R6
+Z82 8C:/Users/bitte/Prog/UnicicloRISC-V/processador_tb.vhd
+Z83 FC:/Users/bitte/Prog/UnicicloRISC-V/processador_tb.vhd
+l0
+L5
+VHbfUeB3zo[ONka8IT[R@@3
+!s100 dBn[^LnRZK`4Q7QD8Xn?11
+R9
+31
+!i10b 1
+Z84 !s108 1562858410.394000
+Z85 !s90 -reportprogress|300|-93|-work|work|C:/Users/bitte/Prog/UnicicloRISC-V/processador_tb.vhd|
+Z86 !s107 C:/Users/bitte/Prog/UnicicloRISC-V/processador_tb.vhd|
+R13
+R14
+Aprocessador_arch
+R3
+R2
+R4
+R5
+DEx4 work 14 processador_tb 0 22 HbfUeB3zo[ONka8IT[R@@3
+l20
+L7
+V>96XZkIRIfXd7b6IE3lX50
+!s100 BX_WRj<]KO:TPa0ElDJVb0
+R9
+31
+!i10b 1
+R84
+R85
+R86
+R13
+R14
+Priscv_pkg
+R3
+R4
+R5
+w1562857822
+R6
+8C:/Users/bitte/Prog/UnicicloRISC-V/riscv_pkg.vhd
+FC:/Users/bitte/Prog/UnicicloRISC-V/riscv_pkg.vhd
+l0
+L5
+VjN[OV1QnM:4i;n6i8[zeR0
+R9
+31
+R13
+R14
+!s100 Ob@?2f8F38751DJBiA_FV2
+!i10b 1
+!s108 1562858409.447000
+!s90 -reportprogress|300|-93|-work|work|C:/Users/bitte/Prog/UnicicloRISC-V/riscv_pkg.vhd|
+!s107 C:/Users/bitte/Prog/UnicicloRISC-V/riscv_pkg.vhd|
+Esomador
+R1
+R2
+R3
+R4
+R5
+R6
+Z87 8C:/Users/bitte/Prog/UnicicloRISC-V/somador.vhd
+Z88 FC:/Users/bitte/Prog/UnicicloRISC-V/somador.vhd
+l0
+L6
+V:T=zIGhznEe=g6iZa2JS32
+R9
+31
+Z89 !s108 1562858409.766000
+Z90 !s90 -reportprogress|300|-93|-work|work|C:/Users/bitte/Prog/UnicicloRISC-V/somador.vhd|
+Z91 !s107 C:/Users/bitte/Prog/UnicicloRISC-V/somador.vhd|
+R13
+R14
+!s100 a_gd_3z>=BfKdMkJPJ4Ji3
+!i10b 1
+Abehavorial
+R2
+R3
+R4
+R5
+R81
+l19
+L18
+VGQ2b<=JYY[FJaVkdMj43T2
+R9
+31
+R89
+R90
+R91
+R13
+R14
+!s100 VF]=dzV95;]38RRND76Kl2
+!i10b 1
+Eula
+R1
+R2
+R3
+R4
+R5
+R6
+Z92 8C:/Users/bitte/Prog/UnicicloRISC-V/ula.vhd
+Z93 FC:/Users/bitte/Prog/UnicicloRISC-V/ula.vhd
+l0
+L6
+V?3R]l@MOWZQ6glCMLHY^h0
+R9
+31
+Z94 !s108 1562858409.514000
+Z95 !s90 -reportprogress|300|-93|-work|work|C:/Users/bitte/Prog/UnicicloRISC-V/ula.vhd|
+Z96 !s107 C:/Users/bitte/Prog/UnicicloRISC-V/ula.vhd|
+R13
+R14
+!s100 cBL@gQeQZR;ahjPEfmPmK3
+!i10b 1
+Abehavioral
+R2
+R3
+R4
+R5
+R19
+l17
+L14
+VEl0R_I?1diO0>C>o79:VL0
+R9
+31
+R94
+R95
+R96
+R13
+R14
+!s100 O^NgU_R3e6BLD?8aohPil2
+!i10b 1
+Exregs
+R1
+R2
+R3
+R4
+R5
+R6
+Z97 8C:/Users/bitte/Prog/UnicicloRISC-V/xregs.vhd
+Z98 FC:/Users/bitte/Prog/UnicicloRISC-V/xregs.vhd
+l0
+L6
+V_k=JV781U4K]bm7QARcW70
+R9
+31
+Z99 !s108 1562858409.592000
+Z100 !s90 -reportprogress|300|-93|-work|work|C:/Users/bitte/Prog/UnicicloRISC-V/xregs.vhd|
+Z101 !s107 C:/Users/bitte/Prog/UnicicloRISC-V/xregs.vhd|
+R13
+R14
+!s100 8_4e84fPj`PgZVlY^H^gX1
+!i10b 1
+Abehavioral
+R2
+R3
+R4
+R5
+R18
+l22
+L16
+V2Qa>?Pc=B7BVS10J6F<Yk1
+R9
+31
+R99
+R100
+R101
+R13
+R14
+!s100 ?I:IcA676AY2jbZGXP;FF1
+!i10b 1

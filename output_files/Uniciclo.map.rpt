@@ -1,6 +1,6 @@
 Analysis & Synthesis report for Uniciclo
-Wed Jul 03 02:54:43 2019
-Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+Thu Jul 11 12:10:29 2019
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -13,10 +13,21 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  8. Analysis & Synthesis IP Cores Summary
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Source assignments for fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component|altsyncram_add1:auto_generated
+ 12. Source assignments for memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component|altsyncram_6rc1:auto_generated
+ 13. Parameter Settings for User Entity Instance: fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component
+ 14. Parameter Settings for User Entity Instance: memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component
+ 15. altsyncram Parameter Settings by Entity Instance
+ 16. Port Connectivity Checks: "somador:adder2"
+ 17. Port Connectivity Checks: "somador:adder1"
+ 18. Port Connectivity Checks: "breg_ula:breg_ula"
+ 19. Port Connectivity Checks: "fetch:fetch|memoriaIns:memoriaIns"
+ 20. Port Connectivity Checks: "fetch:fetch"
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
 
 
 
@@ -39,24 +50,24 @@ applicable agreement for further details.
 
 
 
-+---------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                    ;
-+------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Jul 03 02:54:43 2019      ;
-; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
-; Revision Name                      ; Uniciclo                                   ;
-; Top-level Entity Name              ; ula                                        ;
-; Family                             ; Cyclone II                                 ;
-; Total logic elements               ; 704                                        ;
-;     Total combinational functions  ; 704                                        ;
-;     Dedicated logic registers      ; 0                                          ;
-; Total registers                    ; 0                                          ;
-; Total pins                         ; 101                                        ;
-; Total virtual pins                 ; 0                                          ;
-; Total memory bits                  ; 0                                          ;
-; Embedded Multiplier 9-bit elements ; 0                                          ;
-; Total PLLs                         ; 0                                          ;
-+------------------------------------+--------------------------------------------+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Jul 11 12:10:29 2019           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; Uniciclo                                        ;
+; Top-level Entity Name              ; processador                                     ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 0                                               ;
+;     Total combinational functions  ; 0                                               ;
+;     Dedicated logic registers      ; 0                                               ;
+; Total registers                    ; 0                                               ;
+; Total pins                         ; 2                                               ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -64,7 +75,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
-; Top-level entity name                                                      ; ula                ; Uniciclo           ;
+; Top-level entity name                                                      ; processador        ; Uniciclo           ;
 ; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -154,14 +165,40 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                    ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                             ; Library ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
-; ula.vhd                          ; yes             ; User VHDL File  ; C:/Users/johpetsc/Documents/UnicicloRISC-V/ula.vhd       ;         ;
-; riscv_pkg.vhd                    ; yes             ; User VHDL File  ; C:/Users/johpetsc/Documents/UnicicloRISC-V/riscv_pkg.vhd ;         ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                    ;
++----------------------------------+-----------------+----------------------------------+-------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                            ; Library ;
++----------------------------------+-----------------+----------------------------------+-------------------------------------------------------------------------+---------+
+; ula.vhd                          ; yes             ; User VHDL File                   ; C:/Users/bitte/Prog/UnicicloRISC-V/ula.vhd                              ;         ;
+; genImm32.vhd                     ; yes             ; User VHDL File                   ; C:/Users/bitte/Prog/UnicicloRISC-V/genImm32.vhd                         ;         ;
+; xregs.vhd                        ; yes             ; User VHDL File                   ; C:/Users/bitte/Prog/UnicicloRISC-V/xregs.vhd                            ;         ;
+; mux.vhd                          ; yes             ; User VHDL File                   ; C:/Users/bitte/Prog/UnicicloRISC-V/mux.vhd                              ;         ;
+; somador.vhd                      ; yes             ; User VHDL File                   ; C:/Users/bitte/Prog/UnicicloRISC-V/somador.vhd                          ;         ;
+; controle.vhd                     ; yes             ; User VHDL File                   ; C:/Users/bitte/Prog/UnicicloRISC-V/controle.vhd                         ;         ;
+; controleULA.vhd                  ; yes             ; User VHDL File                   ; C:/Users/bitte/Prog/UnicicloRISC-V/controleULA.vhd                      ;         ;
+; memoriaIns.vhd                   ; yes             ; User Wizard-Generated File       ; C:/Users/bitte/Prog/UnicicloRISC-V/memoriaIns.vhd                       ;         ;
+; memoriaDados.vhd                 ; yes             ; User Wizard-Generated File       ; C:/Users/bitte/Prog/UnicicloRISC-V/memoriaDados.vhd                     ;         ;
+; riscv_pkg.vhd                    ; yes             ; User VHDL File                   ; C:/Users/bitte/Prog/UnicicloRISC-V/riscv_pkg.vhd                        ;         ;
+; pc.vhd                           ; yes             ; User VHDL File                   ; C:/Users/bitte/Prog/UnicicloRISC-V/pc.vhd                               ;         ;
+; fetch.vhd                        ; yes             ; User VHDL File                   ; C:/Users/bitte/Prog/UnicicloRISC-V/fetch.vhd                            ;         ;
+; processador.vhd                  ; yes             ; User VHDL File                   ; C:/Users/bitte/Prog/UnicicloRISC-V/processador.vhd                      ;         ;
+; breg_ula.vhd                     ; yes             ; User VHDL File                   ; C:/Users/bitte/Prog/UnicicloRISC-V/breg_ula.vhd                         ;         ;
+; memoria.vhd                      ; yes             ; User VHDL File                   ; C:/Users/bitte/Prog/UnicicloRISC-V/memoria.vhd                          ;         ;
+; dados.mif                        ; yes             ; User Memory Initialization File  ; C:/Users/bitte/Prog/UnicicloRISC-V/dados.mif                            ;         ;
+; instrucoes.mif                   ; yes             ; User Memory Initialization File  ; C:/Users/bitte/Prog/UnicicloRISC-V/instrucoes.mif                       ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                     ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                     ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                     ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                     ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                     ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                     ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                     ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                     ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                     ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_add1.tdf           ; yes             ; Auto-Generated Megafunction      ; C:/Users/bitte/Prog/UnicicloRISC-V/db/altsyncram_add1.tdf               ;         ;
+; db/altsyncram_6rc1.tdf           ; yes             ; Auto-Generated Megafunction      ; C:/Users/bitte/Prog/UnicicloRISC-V/db/altsyncram_6rc1.tdf               ;         ;
++----------------------------------+-----------------+----------------------------------+-------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -169,28 +206,23 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 704   ;
 ;                                             ;       ;
-; Total combinational functions               ; 704   ;
+; Total combinational functions               ; 0     ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 334   ;
-;     -- 3 input functions                    ; 281   ;
-;     -- <=2 input functions                  ; 89    ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 0     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 610   ;
-;     -- arithmetic mode                      ; 94    ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
 ;                                             ;       ;
 ; Total registers                             ; 0     ;
 ;     -- Dedicated logic registers            ; 0     ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 101   ;
+; I/O pins                                    ; 2     ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
-; Maximum fan-out node                        ; B[1]  ;
-; Maximum fan-out                             ; 95    ;
-; Total fan-out                               ; 2390  ;
-; Average fan-out                             ; 2.97  ;
 +---------------------------------------------+-------+
 
 
@@ -199,9 +231,1053 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |ula                       ; 704 (704)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 101  ; 0            ; |ula                ;              ;
+; |processador               ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 2    ; 0            ; |processador        ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                        ;
++--------+--------------+---------+--------------+--------------+--------------------------------------------------------+-----------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                        ; IP Include File                                     ;
++--------+--------------+---------+--------------+--------------+--------------------------------------------------------+-----------------------------------------------------+
+; Altera ; RAM: 1-PORT  ; 13.0    ; N/A          ; N/A          ; |processador|fetch:fetch|memoriaIns:memoriaIns         ; C:/Users/bitte/Prog/UnicicloRISC-V/memoriaIns.vhd   ;
+; Altera ; RAM: 1-PORT  ; 13.0    ; N/A          ; N/A          ; |processador|memoria:memoria|memoriaDados:memoriaDados ; C:/Users/bitte/Prog/UnicicloRISC-V/memoriaDados.vhd ;
++--------+--------------+---------+--------------+--------------+--------------------------------------------------------+-----------------------------------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++-------------------------------------------+--------------------------------------+
+; Register name                             ; Reason for Removal                   ;
++-------------------------------------------+--------------------------------------+
+; fetch:fetch|pc:pc|pcout[0..31]            ; Stuck at GND due to stuck port clear ;
+; breg_ula:breg_ula|xregs:xregs|reg[31][0]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[31][1]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[31][2]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[31][3]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[31][4]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[31][5]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[31][6]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[31][7]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[31][8]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[31][9]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[31][10] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[31][11] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[31][12] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[31][13] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[31][14] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[31][15] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[31][16] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[31][17] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[31][18] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[31][19] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[31][20] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[31][21] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[31][22] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[31][23] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[31][24] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[31][25] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[31][26] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[31][27] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[31][28] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[31][29] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[31][30] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[31][31] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[30][0]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[30][1]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[30][2]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[30][3]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[30][4]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[30][5]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[30][6]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[30][7]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[30][8]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[30][9]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[30][10] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[30][11] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[30][12] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[30][13] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[30][14] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[30][15] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[30][16] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[30][17] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[30][18] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[30][19] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[30][20] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[30][21] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[30][22] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[30][23] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[30][24] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[30][25] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[30][26] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[30][27] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[30][28] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[30][29] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[30][30] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[30][31] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[29][0]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[29][1]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[29][2]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[29][3]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[29][4]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[29][5]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[29][6]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[29][7]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[29][8]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[29][9]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[29][10] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[29][11] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[29][12] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[29][13] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[29][14] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[29][15] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[29][16] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[29][17] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[29][18] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[29][19] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[29][20] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[29][21] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[29][22] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[29][23] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[29][24] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[29][25] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[29][26] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[29][27] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[29][28] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[29][29] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[29][30] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[29][31] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[28][0]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[28][1]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[28][2]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[28][3]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[28][4]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[28][5]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[28][6]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[28][7]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[28][8]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[28][9]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[28][10] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[28][11] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[28][12] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[28][13] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[28][14] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[28][15] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[28][16] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[28][17] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[28][18] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[28][19] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[28][20] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[28][21] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[28][22] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[28][23] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[28][24] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[28][25] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[28][26] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[28][27] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[28][28] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[28][29] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[28][30] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[28][31] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[27][0]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[27][1]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[27][2]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[27][3]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[27][4]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[27][5]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[27][6]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[27][7]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[27][8]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[27][9]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[27][10] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[27][11] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[27][12] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[27][13] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[27][14] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[27][15] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[27][16] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[27][17] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[27][18] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[27][19] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[27][20] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[27][21] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[27][22] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[27][23] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[27][24] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[27][25] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[27][26] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[27][27] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[27][28] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[27][29] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[27][30] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[27][31] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[26][0]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[26][1]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[26][2]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[26][3]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[26][4]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[26][5]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[26][6]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[26][7]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[26][8]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[26][9]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[26][10] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[26][11] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[26][12] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[26][13] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[26][14] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[26][15] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[26][16] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[26][17] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[26][18] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[26][19] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[26][20] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[26][21] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[26][22] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[26][23] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[26][24] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[26][25] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[26][26] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[26][27] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[26][28] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[26][29] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[26][30] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[26][31] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[25][0]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[25][1]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[25][2]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[25][3]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[25][4]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[25][5]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[25][6]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[25][7]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[25][8]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[25][9]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[25][10] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[25][11] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[25][12] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[25][13] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[25][14] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[25][15] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[25][16] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[25][17] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[25][18] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[25][19] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[25][20] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[25][21] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[25][22] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[25][23] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[25][24] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[25][25] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[25][26] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[25][27] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[25][28] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[25][29] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[25][30] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[25][31] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[24][0]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[24][1]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[24][2]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[24][3]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[24][4]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[24][5]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[24][6]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[24][7]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[24][8]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[24][9]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[24][10] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[24][11] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[24][12] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[24][13] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[24][14] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[24][15] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[24][16] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[24][17] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[24][18] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[24][19] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[24][20] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[24][21] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[24][22] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[24][23] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[24][24] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[24][25] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[24][26] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[24][27] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[24][28] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[24][29] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[24][30] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[24][31] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[23][0]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[23][1]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[23][2]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[23][3]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[23][4]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[23][5]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[23][6]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[23][7]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[23][8]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[23][9]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[23][10] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[23][11] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[23][12] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[23][13] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[23][14] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[23][15] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[23][16] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[23][17] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[23][18] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[23][19] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[23][20] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[23][21] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[23][22] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[23][23] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[23][24] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[23][25] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[23][26] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[23][27] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[23][28] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[23][29] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[23][30] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[23][31] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[22][0]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[22][1]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[22][2]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[22][3]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[22][4]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[22][5]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[22][6]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[22][7]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[22][8]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[22][9]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[22][10] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[22][11] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[22][12] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[22][13] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[22][14] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[22][15] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[22][16] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[22][17] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[22][18] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[22][19] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[22][20] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[22][21] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[22][22] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[22][23] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[22][24] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[22][25] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[22][26] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[22][27] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[22][28] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[22][29] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[22][30] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[22][31] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[21][0]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[21][1]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[21][2]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[21][3]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[21][4]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[21][5]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[21][6]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[21][7]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[21][8]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[21][9]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[21][10] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[21][11] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[21][12] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[21][13] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[21][14] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[21][15] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[21][16] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[21][17] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[21][18] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[21][19] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[21][20] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[21][21] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[21][22] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[21][23] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[21][24] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[21][25] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[21][26] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[21][27] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[21][28] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[21][29] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[21][30] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[21][31] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[20][0]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[20][1]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[20][2]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[20][3]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[20][4]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[20][5]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[20][6]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[20][7]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[20][8]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[20][9]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[20][10] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[20][11] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[20][12] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[20][13] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[20][14] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[20][15] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[20][16] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[20][17] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[20][18] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[20][19] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[20][20] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[20][21] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[20][22] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[20][23] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[20][24] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[20][25] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[20][26] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[20][27] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[20][28] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[20][29] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[20][30] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[20][31] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[19][0]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[19][1]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[19][2]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[19][3]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[19][4]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[19][5]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[19][6]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[19][7]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[19][8]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[19][9]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[19][10] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[19][11] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[19][12] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[19][13] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[19][14] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[19][15] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[19][16] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[19][17] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[19][18] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[19][19] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[19][20] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[19][21] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[19][22] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[19][23] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[19][24] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[19][25] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[19][26] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[19][27] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[19][28] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[19][29] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[19][30] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[19][31] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[18][0]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[18][1]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[18][2]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[18][3]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[18][4]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[18][5]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[18][6]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[18][7]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[18][8]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[18][9]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[18][10] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[18][11] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[18][12] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[18][13] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[18][14] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[18][15] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[18][16] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[18][17] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[18][18] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[18][19] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[18][20] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[18][21] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[18][22] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[18][23] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[18][24] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[18][25] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[18][26] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[18][27] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[18][28] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[18][29] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[18][30] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[18][31] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[17][0]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[17][1]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[17][2]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[17][3]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[17][4]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[17][5]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[17][6]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[17][7]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[17][8]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[17][9]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[17][10] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[17][11] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[17][12] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[17][13] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[17][14] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[17][15] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[17][16] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[17][17] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[17][18] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[17][19] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[17][20] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[17][21] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[17][22] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[17][23] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[17][24] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[17][25] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[17][26] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[17][27] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[17][28] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[17][29] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[17][30] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[17][31] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[16][0]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[16][1]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[16][2]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[16][3]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[16][4]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[16][5]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[16][6]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[16][7]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[16][8]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[16][9]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[16][10] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[16][11] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[16][12] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[16][13] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[16][14] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[16][15] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[16][16] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[16][17] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[16][18] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[16][19] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[16][20] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[16][21] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[16][22] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[16][23] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[16][24] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[16][25] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[16][26] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[16][27] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[16][28] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[16][29] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[16][30] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[16][31] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[15][0]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[15][1]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[15][2]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[15][3]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[15][4]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[15][5]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[15][6]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[15][7]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[15][8]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[15][9]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[15][10] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[15][11] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[15][12] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[15][13] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[15][14] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[15][15] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[15][16] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[15][17] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[15][18] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[15][19] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[15][20] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[15][21] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[15][22] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[15][23] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[15][24] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[15][25] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[15][26] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[15][27] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[15][28] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[15][29] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[15][30] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[15][31] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[14][0]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[14][1]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[14][2]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[14][3]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[14][4]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[14][5]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[14][6]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[14][7]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[14][8]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[14][9]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[14][10] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[14][11] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[14][12] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[14][13] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[14][14] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[14][15] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[14][16] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[14][17] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[14][18] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[14][19] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[14][20] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[14][21] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[14][22] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[14][23] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[14][24] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[14][25] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[14][26] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[14][27] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[14][28] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[14][29] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[14][30] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[14][31] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[13][0]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[13][1]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[13][2]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[13][3]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[13][4]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[13][5]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[13][6]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[13][7]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[13][8]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[13][9]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[13][10] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[13][11] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[13][12] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[13][13] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[13][14] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[13][15] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[13][16] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[13][17] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[13][18] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[13][19] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[13][20] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[13][21] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[13][22] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[13][23] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[13][24] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[13][25] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[13][26] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[13][27] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[13][28] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[13][29] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[13][30] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[13][31] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[12][0]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[12][1]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[12][2]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[12][3]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[12][4]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[12][5]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[12][6]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[12][7]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[12][8]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[12][9]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[12][10] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[12][11] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[12][12] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[12][13] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[12][14] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[12][15] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[12][16] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[12][17] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[12][18] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[12][19] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[12][20] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[12][21] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[12][22] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[12][23] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[12][24] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[12][25] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[12][26] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[12][27] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[12][28] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[12][29] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[12][30] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[12][31] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[11][0]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[11][1]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[11][2]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[11][3]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[11][4]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[11][5]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[11][6]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[11][7]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[11][8]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[11][9]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[11][10] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[11][11] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[11][12] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[11][13] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[11][14] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[11][15] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[11][16] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[11][17] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[11][18] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[11][19] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[11][20] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[11][21] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[11][22] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[11][23] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[11][24] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[11][25] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[11][26] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[11][27] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[11][28] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[11][29] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[11][30] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[11][31] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[10][0]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[10][1]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[10][2]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[10][3]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[10][4]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[10][5]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[10][6]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[10][7]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[10][8]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[10][9]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[10][10] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[10][11] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[10][12] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[10][13] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[10][14] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[10][15] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[10][16] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[10][17] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[10][18] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[10][19] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[10][20] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[10][21] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[10][22] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[10][23] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[10][24] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[10][25] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[10][26] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[10][27] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[10][28] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[10][29] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[10][30] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[10][31] ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[9][0]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[9][1]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[9][2]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[9][3]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[9][4]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[9][5]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[9][6]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[9][7]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[9][8]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[9][9]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[9][10]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[9][11]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[9][12]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[9][13]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[9][14]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[9][15]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[9][16]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[9][17]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[9][18]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[9][19]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[9][20]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[9][21]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[9][22]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[9][23]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[9][24]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[9][25]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[9][26]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[9][27]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[9][28]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[9][29]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[9][30]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[9][31]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[8][0]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[8][1]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[8][2]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[8][3]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[8][4]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[8][5]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[8][6]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[8][7]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[8][8]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[8][9]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[8][10]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[8][11]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[8][12]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[8][13]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[8][14]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[8][15]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[8][16]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[8][17]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[8][18]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[8][19]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[8][20]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[8][21]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[8][22]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[8][23]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[8][24]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[8][25]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[8][26]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[8][27]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[8][28]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[8][29]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[8][30]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[8][31]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[7][0]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[7][1]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[7][2]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[7][3]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[7][4]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[7][5]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[7][6]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[7][7]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[7][8]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[7][9]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[7][10]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[7][11]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[7][12]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[7][13]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[7][14]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[7][15]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[7][16]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[7][17]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[7][18]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[7][19]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[7][20]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[7][21]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[7][22]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[7][23]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[7][24]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[7][25]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[7][26]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[7][27]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[7][28]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[7][29]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[7][30]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[7][31]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[6][0]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[6][1]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[6][2]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[6][3]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[6][4]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[6][5]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[6][6]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[6][7]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[6][8]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[6][9]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[6][10]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[6][11]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[6][12]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[6][13]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[6][14]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[6][15]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[6][16]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[6][17]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[6][18]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[6][19]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[6][20]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[6][21]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[6][22]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[6][23]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[6][24]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[6][25]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[6][26]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[6][27]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[6][28]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[6][29]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[6][30]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[6][31]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[5][0]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[5][1]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[5][2]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[5][3]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[5][4]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[5][5]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[5][6]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[5][7]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[5][8]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[5][9]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[5][10]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[5][11]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[5][12]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[5][13]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[5][14]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[5][15]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[5][16]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[5][17]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[5][18]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[5][19]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[5][20]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[5][21]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[5][22]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[5][23]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[5][24]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[5][25]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[5][26]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[5][27]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[5][28]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[5][29]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[5][30]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[5][31]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[4][0]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[4][1]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[4][2]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[4][3]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[4][4]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[4][5]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[4][6]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[4][7]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[4][8]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[4][9]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[4][10]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[4][11]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[4][12]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[4][13]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[4][14]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[4][15]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[4][16]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[4][17]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[4][18]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[4][19]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[4][20]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[4][21]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[4][22]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[4][23]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[4][24]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[4][25]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[4][26]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[4][27]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[4][28]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[4][29]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[4][30]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[4][31]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[3][0]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[3][1]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[3][2]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[3][3]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[3][4]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[3][5]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[3][6]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[3][7]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[3][8]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[3][9]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[3][10]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[3][11]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[3][12]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[3][13]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[3][14]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[3][15]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[3][16]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[3][17]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[3][18]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[3][19]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[3][20]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[3][21]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[3][22]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[3][23]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[3][24]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[3][25]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[3][26]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[3][27]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[3][28]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[3][29]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[3][30]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[3][31]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[2][0]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[2][1]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[2][2]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[2][3]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[2][4]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[2][5]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[2][6]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[2][7]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[2][8]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[2][9]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[2][10]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[2][11]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[2][12]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[2][13]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[2][14]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[2][15]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[2][16]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[2][17]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[2][18]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[2][19]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[2][20]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[2][21]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[2][22]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[2][23]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[2][24]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[2][25]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[2][26]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[2][27]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[2][28]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[2][29]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[2][30]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[2][31]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[1][0]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[1][1]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[1][2]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[1][3]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[1][4]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[1][5]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[1][6]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[1][7]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[1][8]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[1][9]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[1][10]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[1][11]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[1][12]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[1][13]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[1][14]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[1][15]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[1][16]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[1][17]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[1][18]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[1][19]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[1][20]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[1][21]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[1][22]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[1][23]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[1][24]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[1][25]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[1][26]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[1][27]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[1][28]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[1][29]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[1][30]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[1][31]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[0][0]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[0][1]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[0][2]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[0][3]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[0][4]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[0][5]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[0][6]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[0][7]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[0][8]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[0][9]   ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[0][10]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[0][11]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[0][12]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[0][13]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[0][14]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[0][15]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[0][16]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[0][17]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[0][18]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[0][19]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[0][20]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[0][21]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[0][22]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[0][23]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[0][24]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[0][25]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[0][26]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[0][27]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[0][28]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[0][29]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[0][30]  ; Lost fanout                          ;
+; breg_ula:breg_ula|xregs:xregs|reg[0][31]  ; Lost fanout                          ;
+; Total Number of Removed Registers = 1056  ;                                      ;
++-------------------------------------------+--------------------------------------+
 
 
 +------------------------------------------------------+
@@ -219,18 +1295,224 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 23:1               ; 7 bits    ; 105 LEs       ; 49 LEs               ; 56 LEs                 ; No         ; |ula|Mux8                  ;
-; 22:1               ; 7 bits    ; 98 LEs        ; 49 LEs               ; 49 LEs                 ; No         ; |ula|Mux17                 ;
-; 24:1               ; 4 bits    ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; No         ; |ula|Mux7                  ;
-; 23:1               ; 4 bits    ; 60 LEs        ; 32 LEs               ; 28 LEs                 ; No         ; |ula|Mux24                 ;
-; 25:1               ; 2 bits    ; 32 LEs        ; 18 LEs               ; 14 LEs                 ; No         ; |ula|Mux3                  ;
-; 24:1               ; 2 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |ula|Mux28                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
++-------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component|altsyncram_add1:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                        ;
++---------------------------------+--------------------+------+-----------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                         ;
++---------------------------------+--------------------+------+-----------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component|altsyncram_6rc1:auto_generated ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                                ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                 ;
++---------------------------------+--------------------+------+-------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+----------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                               ;
++------------------------------------+----------------------+----------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                            ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                         ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                       ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                       ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                     ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                            ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                                            ;
+; WIDTH_A                            ; 32                   ; Signed Integer                                     ;
+; WIDTHAD_A                          ; 8                    ; Signed Integer                                     ;
+; NUMWORDS_A                         ; 256                  ; Signed Integer                                     ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                            ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                            ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                            ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                            ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                            ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                            ;
+; WIDTH_B                            ; 1                    ; Untyped                                            ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                            ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                            ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                            ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                            ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                            ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                            ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                            ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                            ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                            ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                            ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                            ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                            ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                            ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                            ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                     ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                            ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                            ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                            ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                            ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                            ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                            ;
+; INIT_FILE                          ; instrucoes.mif       ; Untyped                                            ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                            ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                            ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                            ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                            ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                            ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                            ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                            ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                            ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                            ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                            ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                            ;
+; DEVICE_FAMILY                      ; Cyclone II           ; Untyped                                            ;
+; CBXI_PARAMETER                     ; altsyncram_add1      ; Untyped                                            ;
++------------------------------------+----------------------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+------------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                       ;
++------------------------------------+----------------------+------------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                    ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                                 ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                               ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                               ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                             ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                    ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                                                    ;
+; WIDTH_A                            ; 32                   ; Signed Integer                                             ;
+; WIDTHAD_A                          ; 8                    ; Signed Integer                                             ;
+; NUMWORDS_A                         ; 256                  ; Signed Integer                                             ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                                    ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                    ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                    ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                    ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                    ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                    ;
+; WIDTH_B                            ; 1                    ; Untyped                                                    ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                                    ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                                    ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                    ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                    ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                                    ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                                    ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                                    ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                    ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                    ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                    ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                                    ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                                    ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                    ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                    ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                             ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                    ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                    ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                    ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                    ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                    ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                    ;
+; INIT_FILE                          ; dados.mif            ; Untyped                                                    ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                    ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                    ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                                    ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                                    ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                                    ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                                    ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                    ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                    ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                    ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                    ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                    ;
+; DEVICE_FAMILY                      ; Cyclone II           ; Untyped                                                    ;
+; CBXI_PARAMETER                     ; altsyncram_6rc1      ; Untyped                                                    ;
++------------------------------------+----------------------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                                      ;
++-------------------------------------------+---------------------------------------------------------------------------+
+; Name                                      ; Value                                                                     ;
++-------------------------------------------+---------------------------------------------------------------------------+
+; Number of entity instances                ; 2                                                                         ;
+; Entity Instance                           ; fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component         ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                                               ;
+;     -- WIDTH_A                            ; 32                                                                        ;
+;     -- NUMWORDS_A                         ; 256                                                                       ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                              ;
+;     -- WIDTH_B                            ; 1                                                                         ;
+;     -- NUMWORDS_B                         ; 1                                                                         ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                    ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                              ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                      ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                 ;
+; Entity Instance                           ; memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                                               ;
+;     -- WIDTH_A                            ; 32                                                                        ;
+;     -- NUMWORDS_A                         ; 256                                                                       ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                              ;
+;     -- WIDTH_B                            ; 1                                                                         ;
+;     -- NUMWORDS_B                         ; 1                                                                         ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                    ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                              ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                      ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                 ;
++-------------------------------------------+---------------------------------------------------------------------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "somador:adder2" ;
++------+-------+----------+------------------+
+; Port ; Type  ; Severity ; Details          ;
++------+-------+----------+------------------+
+; b[0] ; Input ; Info     ; Stuck at GND     ;
++------+-------+----------+------------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "somador:adder1" ;
++----------+-------+----------+--------------+
+; Port     ; Type  ; Severity ; Details      ;
++----------+-------+----------+--------------+
+; b[31..3] ; Input ; Info     ; Stuck at GND ;
+; b[1..0]  ; Input ; Info     ; Stuck at GND ;
+; b[2]     ; Input ; Info     ; Stuck at VCC ;
++----------+-------+----------+--------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "breg_ula:breg_ula"                                                                        ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; rst        ; Input  ; Info     ; Stuck at GND                                                                        ;
+; immout[31] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------+
+; Port Connectivity Checks: "fetch:fetch|memoriaIns:memoriaIns" ;
++------+-------+----------+-------------------------------------+
+; Port ; Type  ; Severity ; Details                             ;
++------+-------+----------+-------------------------------------+
+; data ; Input ; Info     ; Stuck at GND                        ;
+; wren ; Input ; Info     ; Stuck at GND                        ;
++------+-------+----------+-------------------------------------+
+
+
++------------------------------------------+
+; Port Connectivity Checks: "fetch:fetch"  ;
++--------+-------+----------+--------------+
+; Port   ; Type  ; Severity ; Details      ;
++--------+-------+----------+--------------+
+; pc_rst ; Input ; Info     ; Stuck at VCC ;
++--------+-------+----------+--------------+
 
 
 +-------------------------------+
@@ -238,7 +1520,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -247,15 +1529,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
-    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Wed Jul 03 02:54:39 2019
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Jul 11 12:10:27 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Uniciclo -c Uniciclo
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file ula.vhd
     Info (12022): Found design unit 1: ula-behavioral
     Info (12023): Found entity 1: ula
 Info (12021): Found 2 design units, including 1 entities, in source file genimm32.vhd
-    Info (12022): Found design unit 1: genImm32-behavioral
+    Info (12022): Found design unit 1: genImm32-arch_gen
     Info (12023): Found entity 1: genImm32
 Info (12021): Found 2 design units, including 1 entities, in source file xregs.vhd
     Info (12022): Found design unit 1: xregs-behavioral
@@ -274,7 +1556,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file control
     Info (12022): Found design unit 1: controleULA-rtl
     Info (12023): Found entity 1: controleULA
 Info (12021): Found 2 design units, including 1 entities, in source file memoriains.vhd
-    Info (12022): Found design unit 1: memoriaIns-SYN
+    Info (12022): Found design unit 1: memoriains-SYN
     Info (12023): Found entity 1: memoriaIns
 Info (12021): Found 2 design units, including 1 entities, in source file memoriadados.vhd
     Info (12022): Found design unit 1: memoriadados-SYN
@@ -287,17 +1569,157 @@ Info (12021): Found 2 design units, including 1 entities, in source file pc.vhd
 Info (12021): Found 2 design units, including 1 entities, in source file fetch.vhd
     Info (12022): Found design unit 1: fetch-rtl
     Info (12023): Found entity 1: fetch
-Info (12127): Elaborating entity "ula" for the top level hierarchy
+Info (12021): Found 2 design units, including 1 entities, in source file processador.vhd
+    Info (12022): Found design unit 1: processador-rtl
+    Info (12023): Found entity 1: processador
+Info (12021): Found 2 design units, including 1 entities, in source file processador_tb.vhd
+    Info (12022): Found design unit 1: processador_tb-processador_arch
+    Info (12023): Found entity 1: processador_tb
+Info (12021): Found 2 design units, including 1 entities, in source file breg_ula.vhd
+    Info (12022): Found design unit 1: breg_ula-rtl
+    Info (12023): Found entity 1: breg_ula
+Info (12021): Found 2 design units, including 1 entities, in source file memoria.vhd
+    Info (12022): Found design unit 1: memoria-rtl
+    Info (12023): Found entity 1: memoria
+Info (12127): Elaborating entity "processador" for the top level hierarchy
+Warning (10540): VHDL Signal Declaration warning at processador.vhd(27): used explicit default value for signal "pc_rst" because signal was never assigned a value
+Info (12128): Elaborating entity "fetch" for hierarchy "fetch:fetch"
+Info (12128): Elaborating entity "pc" for hierarchy "fetch:fetch|pc:pc"
+Warning (10492): VHDL Process Statement warning at pc.vhd(21): signal "pc_rst" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "memoriaIns" for hierarchy "fetch:fetch|memoriaIns:memoriaIns"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component"
+Info (12130): Elaborated megafunction instantiation "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component"
+Info (12133): Instantiated megafunction "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component" with the following parameter:
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "instrucoes.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone II"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "256"
+    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "widthad_a" = "8"
+    Info (12134): Parameter "width_a" = "32"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_add1.tdf
+    Info (12023): Found entity 1: altsyncram_add1
+Info (12128): Elaborating entity "altsyncram_add1" for hierarchy "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component|altsyncram_add1:auto_generated"
+Info (12128): Elaborating entity "breg_ula" for hierarchy "breg_ula:breg_ula"
+Info (12128): Elaborating entity "ula" for hierarchy "breg_ula:breg_ula|ula:ula"
+Info (12128): Elaborating entity "xregs" for hierarchy "breg_ula:breg_ula|xregs:xregs"
+Warning (10492): VHDL Process Statement warning at xregs.vhd(42): signal "reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at xregs.vhd(42): signal "rs1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at xregs.vhd(43): signal "reg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at xregs.vhd(43): signal "rs2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "controleULA" for hierarchy "breg_ula:breg_ula|controleULA:controleULA"
+Info (12128): Elaborating entity "genImm32" for hierarchy "breg_ula:breg_ula|genImm32:genImm32"
+Info (12128): Elaborating entity "mux" for hierarchy "breg_ula:breg_ula|mux:mux"
+Info (12128): Elaborating entity "controle" for hierarchy "controle:controle"
+Info (12128): Elaborating entity "memoria" for hierarchy "memoria:memoria"
+Info (12128): Elaborating entity "memoriaDados" for hierarchy "memoria:memoria|memoriaDados:memoriaDados"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component"
+Info (12130): Elaborated megafunction instantiation "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component"
+Info (12133): Instantiated megafunction "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component" with the following parameter:
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "dados.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone II"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "256"
+    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "widthad_a" = "8"
+    Info (12134): Parameter "width_a" = "32"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_6rc1.tdf
+    Info (12023): Found entity 1: altsyncram_6rc1
+Info (12128): Elaborating entity "altsyncram_6rc1" for hierarchy "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component|altsyncram_6rc1:auto_generated"
+Info (12128): Elaborating entity "somador" for hierarchy "somador:adder1"
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component|altsyncram_6rc1:auto_generated|q_a[0]"
+        Warning (14320): Synthesized away node "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component|altsyncram_6rc1:auto_generated|q_a[1]"
+        Warning (14320): Synthesized away node "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component|altsyncram_6rc1:auto_generated|q_a[2]"
+        Warning (14320): Synthesized away node "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component|altsyncram_6rc1:auto_generated|q_a[3]"
+        Warning (14320): Synthesized away node "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component|altsyncram_6rc1:auto_generated|q_a[4]"
+        Warning (14320): Synthesized away node "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component|altsyncram_6rc1:auto_generated|q_a[5]"
+        Warning (14320): Synthesized away node "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component|altsyncram_6rc1:auto_generated|q_a[6]"
+        Warning (14320): Synthesized away node "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component|altsyncram_6rc1:auto_generated|q_a[7]"
+        Warning (14320): Synthesized away node "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component|altsyncram_6rc1:auto_generated|q_a[8]"
+        Warning (14320): Synthesized away node "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component|altsyncram_6rc1:auto_generated|q_a[9]"
+        Warning (14320): Synthesized away node "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component|altsyncram_6rc1:auto_generated|q_a[10]"
+        Warning (14320): Synthesized away node "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component|altsyncram_6rc1:auto_generated|q_a[11]"
+        Warning (14320): Synthesized away node "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component|altsyncram_6rc1:auto_generated|q_a[12]"
+        Warning (14320): Synthesized away node "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component|altsyncram_6rc1:auto_generated|q_a[13]"
+        Warning (14320): Synthesized away node "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component|altsyncram_6rc1:auto_generated|q_a[14]"
+        Warning (14320): Synthesized away node "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component|altsyncram_6rc1:auto_generated|q_a[15]"
+        Warning (14320): Synthesized away node "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component|altsyncram_6rc1:auto_generated|q_a[16]"
+        Warning (14320): Synthesized away node "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component|altsyncram_6rc1:auto_generated|q_a[17]"
+        Warning (14320): Synthesized away node "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component|altsyncram_6rc1:auto_generated|q_a[18]"
+        Warning (14320): Synthesized away node "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component|altsyncram_6rc1:auto_generated|q_a[19]"
+        Warning (14320): Synthesized away node "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component|altsyncram_6rc1:auto_generated|q_a[20]"
+        Warning (14320): Synthesized away node "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component|altsyncram_6rc1:auto_generated|q_a[21]"
+        Warning (14320): Synthesized away node "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component|altsyncram_6rc1:auto_generated|q_a[22]"
+        Warning (14320): Synthesized away node "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component|altsyncram_6rc1:auto_generated|q_a[23]"
+        Warning (14320): Synthesized away node "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component|altsyncram_6rc1:auto_generated|q_a[24]"
+        Warning (14320): Synthesized away node "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component|altsyncram_6rc1:auto_generated|q_a[25]"
+        Warning (14320): Synthesized away node "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component|altsyncram_6rc1:auto_generated|q_a[26]"
+        Warning (14320): Synthesized away node "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component|altsyncram_6rc1:auto_generated|q_a[27]"
+        Warning (14320): Synthesized away node "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component|altsyncram_6rc1:auto_generated|q_a[28]"
+        Warning (14320): Synthesized away node "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component|altsyncram_6rc1:auto_generated|q_a[29]"
+        Warning (14320): Synthesized away node "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component|altsyncram_6rc1:auto_generated|q_a[30]"
+        Warning (14320): Synthesized away node "memoria:memoria|memoriaDados:memoriaDados|altsyncram:altsyncram_component|altsyncram_6rc1:auto_generated|q_a[31]"
+        Warning (14320): Synthesized away node "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component|altsyncram_add1:auto_generated|q_a[0]"
+        Warning (14320): Synthesized away node "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component|altsyncram_add1:auto_generated|q_a[1]"
+        Warning (14320): Synthesized away node "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component|altsyncram_add1:auto_generated|q_a[2]"
+        Warning (14320): Synthesized away node "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component|altsyncram_add1:auto_generated|q_a[3]"
+        Warning (14320): Synthesized away node "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component|altsyncram_add1:auto_generated|q_a[4]"
+        Warning (14320): Synthesized away node "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component|altsyncram_add1:auto_generated|q_a[5]"
+        Warning (14320): Synthesized away node "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component|altsyncram_add1:auto_generated|q_a[6]"
+        Warning (14320): Synthesized away node "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component|altsyncram_add1:auto_generated|q_a[7]"
+        Warning (14320): Synthesized away node "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component|altsyncram_add1:auto_generated|q_a[8]"
+        Warning (14320): Synthesized away node "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component|altsyncram_add1:auto_generated|q_a[9]"
+        Warning (14320): Synthesized away node "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component|altsyncram_add1:auto_generated|q_a[10]"
+        Warning (14320): Synthesized away node "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component|altsyncram_add1:auto_generated|q_a[11]"
+        Warning (14320): Synthesized away node "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component|altsyncram_add1:auto_generated|q_a[12]"
+        Warning (14320): Synthesized away node "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component|altsyncram_add1:auto_generated|q_a[13]"
+        Warning (14320): Synthesized away node "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component|altsyncram_add1:auto_generated|q_a[14]"
+        Warning (14320): Synthesized away node "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component|altsyncram_add1:auto_generated|q_a[15]"
+        Warning (14320): Synthesized away node "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component|altsyncram_add1:auto_generated|q_a[16]"
+        Warning (14320): Synthesized away node "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component|altsyncram_add1:auto_generated|q_a[17]"
+        Warning (14320): Synthesized away node "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component|altsyncram_add1:auto_generated|q_a[18]"
+        Warning (14320): Synthesized away node "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component|altsyncram_add1:auto_generated|q_a[19]"
+        Warning (14320): Synthesized away node "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component|altsyncram_add1:auto_generated|q_a[20]"
+        Warning (14320): Synthesized away node "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component|altsyncram_add1:auto_generated|q_a[21]"
+        Warning (14320): Synthesized away node "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component|altsyncram_add1:auto_generated|q_a[22]"
+        Warning (14320): Synthesized away node "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component|altsyncram_add1:auto_generated|q_a[23]"
+        Warning (14320): Synthesized away node "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component|altsyncram_add1:auto_generated|q_a[24]"
+        Warning (14320): Synthesized away node "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component|altsyncram_add1:auto_generated|q_a[25]"
+        Warning (14320): Synthesized away node "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component|altsyncram_add1:auto_generated|q_a[26]"
+        Warning (14320): Synthesized away node "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component|altsyncram_add1:auto_generated|q_a[27]"
+        Warning (14320): Synthesized away node "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component|altsyncram_add1:auto_generated|q_a[28]"
+        Warning (14320): Synthesized away node "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component|altsyncram_add1:auto_generated|q_a[29]"
+        Warning (14320): Synthesized away node "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component|altsyncram_add1:auto_generated|q_a[30]"
+        Warning (14320): Synthesized away node "fetch:fetch|memoriaIns:memoriaIns|altsyncram:altsyncram_component|altsyncram_add1:auto_generated|q_a[31]"
+Info (17049): 1024 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 805 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 68 input pins
-    Info (21059): Implemented 33 output pins
-    Info (21061): Implemented 704 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4651 megabytes
-    Info: Processing ended: Wed Jul 03 02:54:43 2019
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:03
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clock"
+    Warning (15610): No output dependent on input pin "clock_mem"
+Info (21057): Implemented 2 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 0 output pins
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 77 warnings
+    Info: Peak virtual memory: 4674 megabytes
+    Info: Processing ended: Thu Jul 11 12:10:29 2019
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 
