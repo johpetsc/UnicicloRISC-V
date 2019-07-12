@@ -7,12 +7,12 @@ END processador_tb;
 ARCHITECTURE processador_arch OF processador_tb IS
 -- constants                                                 
 -- signals                                                   
-SIGNAL clock : STD_LOGIC;
-SIGNAL clock_mem : STD_LOGIC;
+SIGNAL clock_pc_md : STD_LOGIC;
+SIGNAL clock_general : STD_LOGIC;
 COMPONENT processador
 	PORT (
-	clock : IN STD_LOGIC;
-	clock_mem : IN STD_LOGIC
+	clock_pc_md : IN STD_LOGIC;
+	clock_general : IN STD_LOGIC
 	);
 END COMPONENT;
 
@@ -21,8 +21,8 @@ BEGIN
 	i1 : processador
 	PORT MAP (
 -- list connections between master ports and signals
-	clock => clock,
-	clock_mem => clock_mem
+	clock_pc_md => clock_pc_md,
+	clock_general => clock_general
 	);
 init : PROCESS                                    
 -- variable declarations                                     
@@ -37,11 +37,11 @@ always : PROCESS
 -- (        )                                                 
 -- variable declarations                                      
 BEGIN                                                         
-	clock <= '1';
-	clock_mem <= '0';
+	clock_pc_md <= '1';
+	clock_general <= '0';
 	wait for 1 ps;
-	clock_mem <= '1';
-	clock <= '0';
+	clock_general <= '1';
+	clock_pc_md <= '0';
 	wait for 1 ps;
 	
 	

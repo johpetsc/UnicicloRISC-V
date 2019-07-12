@@ -39,7 +39,7 @@ architecture behavioral of controle is
 				when	"0000011" =>	-- LW
 					Branch 		<= '0';
 					MemRead 		<= '1';
-					MemtoReg 	<= '0';
+					MemtoReg 	<= '1';
 					MemWrite		<= '0';
 					ALUSrc		<= '1';
 					RegWrite		<= '1';

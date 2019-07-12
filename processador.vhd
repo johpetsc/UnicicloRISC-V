@@ -7,8 +7,8 @@ entity processador is
 	
 	port(
 		-- Ports	
-		--clock			: in std_logic;
-		clock_mem	: in std_logic
+		clock_pc_md		: in std_logic;
+		clock_general	: in std_logic
 	);
 	
 end processador;
@@ -66,8 +66,8 @@ fetch: entity work.fetch port map(
 		
 	-- sinais do fetch => sinais do processador 
 	pc_mais_4 	=> pc_in,
-	clock 		=> clock,
-	clock_mem 	=> clock_mem,
+	clock 		=> clock_pc_md,
+	clock_mem 	=> clock_general,
 	opcode 		=> opcode,
 	rs1 			=> rs1,
 	rs2 			=> rs2,
@@ -83,7 +83,7 @@ breg_ula: entity work.breg_ula port map(
 	-- sinais do breg_ula => sinais do processador 
 	din 				=> mem_to_reg,
 	wren 				=> controle_reg_write,
-	clk 				=> clock_mem,
+	clk 				=> clock_general,
 	rst 				=> '0',
 	rs1 				=> rs1,
 	rs2 				=> rs2,
@@ -122,7 +122,7 @@ memoria: entity work.memoria port map(
 	MemWrite 	=> controle_mem_write,
 	MemRead 		=> controle_mem_read,
 	MemtoReg 	=> controle_mem_to_reg,
-	clock_mem 	=> clock_mem,
+	clock_mem 	=> clock_pc_md,
 	dataout 		=> mem_to_reg
 		
 );
