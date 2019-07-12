@@ -198,7 +198,7 @@
 # .main_pane.structure.interior.cs.body.struct
 # view signals
 # .main_pane.objects.interior.cs.body.tree
-# run 40 ps
+# run 400 ps
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ps  Iteration: 0  Instance: /processador_tb/i1/breg_ula/xregs
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
@@ -207,13 +207,9 @@
 #    Time: 0 ps  Iteration: 1  Instance: /processador_tb/i1/breg_ula/xregs
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ps  Iteration: 1  Instance: /processador_tb/i1/breg_ula/xregs
-add wave -position insertpoint sim:/processador_tb/i1/fetch/*
-add wave -position insertpoint sim:/processador_tb/i1/mux3/*
-run
-run
-add wave -position insertpoint sim:/processador_tb/i1/breg_ula/*
-add wave -position insertpoint sim:/processador_tb/i1/controle/*
-run
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -16777216 is not in bounds of NATURAL.
+#    Time: 31 ps  Iteration: 10  Instance: /processador_tb/i1/breg_ula/ula
+do C:/Users/bitte/Prog/UnicicloRISC-V/simulation/modelsim/wave.do
 restart
 run
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
@@ -224,3 +220,5 @@ run
 #    Time: 0 ps  Iteration: 1  Instance: /processador_tb/i1/breg_ula/xregs
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ps  Iteration: 1  Instance: /processador_tb/i1/breg_ula/xregs
+# ** Warning: (vsim-151) NUMERIC_STD.TO_INTEGER: Value -16777216 is not in bounds of NATURAL.
+#    Time: 31 ps  Iteration: 10  Instance: /processador_tb/i1/breg_ula/ula

@@ -29,7 +29,12 @@ begin
 			when X"37" => aux <= (signed(shift_left((resize(signed(instr(31 downto 12)), 32)), 12)) and X"FFFFF000");
 			when X"17" => aux <= (signed(shift_left((resize(signed(instr(31 downto 12)), 32)), 12)) and X"FFFFF000");
 			when X"6F" => aux <= (resize(signed(instr(31)&instr(19 downto 12)&instr(20)&instr(30 downto 21)&'0'), 32));
-			when others => aux <= (resize(signed(instr(31 downto 20)), 32));
+			when others => 
+				case instr(14 downto 12) is
+					when "101" => aux <= (resize(signed(instr(24 downto 20)), 32));
+					when "001" => aux <= (resize(signed(instr(24 downto 20)), 32));
+					when others => aux <= (resize(signed(instr(31 downto 20)), 32));
+					end case;
 		end case;
 		imm32 <= aux;
 	end process;
