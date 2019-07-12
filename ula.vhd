@@ -88,6 +88,8 @@ begin
 								else 
 									auxZ := (others => '0');
 								end if;
+			-- Lui
+			when "1110" => auxZ := std_logic_vector(signed(B));
 			
 			when others => 
 			aux_jalr <= '1';

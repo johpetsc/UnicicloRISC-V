@@ -22,7 +22,9 @@ architecture rtl of controleULA is
 	proc_ctrl_ula:	process (func, ALUOp, aux)
 
 	begin
-		if(ALUOp = "00") then -- LW e SW
+		if(opin(6 downto 0) = "0110111") then
+			aux <= "1110"; -- Lui
+		elsif(ALUOp = "00") then -- LW e SW
 			aux <= "0000";
 		elsif(ALUOp = "01") then --branch
 			case func(2 downto 0) is 

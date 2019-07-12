@@ -39,7 +39,7 @@ architecture behavioral of controle is
 				when	"0000011" =>	-- LW
 					Branch 		<= '0';
 					MemRead 		<= '1';
-					MemtoReg 	<= '1';
+					MemtoReg 	<= '0';
 					MemWrite		<= '0';
 					ALUSrc		<= '1';
 					RegWrite		<= '1';
@@ -79,6 +79,15 @@ architecture behavioral of controle is
 					MemWrite		<= '0';
 					ALUSrc		<= '1';
 					RegWrite		<= '0';
+					ALUOp			<= "11";
+					
+				when	"0110111" => -- lui
+					Branch 		<= '0';
+					MemRead 		<= '0';
+					MemtoReg 	<= '0';
+					MemWrite		<= '0';
+					ALUSrc		<= '1';
+					RegWrite		<= '1';
 					ALUOp			<= "11";
 					
 				when others =>	

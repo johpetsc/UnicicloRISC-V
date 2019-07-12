@@ -40,9 +40,10 @@ BEGIN
 	clock <= '1';
 	clock_mem <= '0';
 	wait for 1 ps;
-	clock <= '0';
 	clock_mem <= '1';
-	wait for 1 ps;  
+	clock <= '0';
+	wait for 1 ps;
+	
 	
 END PROCESS always;                                          
 END processador_arch;
