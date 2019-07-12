@@ -37,8 +37,8 @@ memoriaDados: entity work.memoriaDados port map(
 );
 
 mux: entity work.mux port map(
-	A			=> DataMem,
-	B			=> DataMux,
+	A			=> DataMux,
+	B			=> DataMem,
 	sel		=> MemtoReg,
 	X			=> res
 );

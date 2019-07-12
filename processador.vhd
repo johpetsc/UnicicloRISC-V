@@ -7,7 +7,7 @@ entity processador is
 	
 	port(
 		-- Ports	
-		clock			: in std_logic;
+		--clock			: in std_logic;
 		clock_mem	: in std_logic
 	);
 	
