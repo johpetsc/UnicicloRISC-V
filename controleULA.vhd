@@ -46,7 +46,7 @@ architecture rtl of controleULA is
 			case func(2 downto 0) is 
 				when "000" =>  aux <= "0001"; -- beq
 				when "100" =>  aux <= "1000"; -- blt
-				when "001" =>  aux <= "1101"; -- bne
+				when "001" =>  aux <= "1100"; -- bne
 				when "101" =>  aux <= "1010"; -- bge
 				when others => aux <= "1111"; 
 				end case;

@@ -23,6 +23,7 @@ architecture rtl of processador is
 	signal pc_mais_4					: std_logic_vector(31 downto 0) := X"00000000";
 	signal pc_jump					: std_logic_vector(31 downto 0) := X"00000000";
 	signal pc_rst					: std_logic := '1';
+	signal pc_definitivo			: std_logic_vector(31 downto 0) := X"00000000";
 	
 	-- Registradores
 	signal rs1						: std_logic_vector(4 downto 0) := "00000";
@@ -46,6 +47,8 @@ architecture rtl of processador is
 	signal controle_reg_write	: std_logic := '0';
 	signal controle_zero_ula	: std_logic := '0';
 	signal controle_aux_and		: std_logic := '0';
+	signal controle_aux_and2		: std_logic := '0';
+	signal controle_jalr			: std_logic := '0';
 	
 	-- Memoria de dados
 	signal mem_to_reg				: std_logic_vector(31 downto 0) := X"00000000";
@@ -65,6 +68,7 @@ begin
 			jal_aux <= pc_mais_4;
 		end if;
 	end process;
+	controle_aux_and2 <= controle_jalr and controle_zero_ula;
 	pc_rst <= '0';
 	controle_aux_and <= controle_branch and controle_zero_ula;
 	imm_shiftado_1 <= std_logic_vector(imm_result(31 downto 0));
@@ -72,7 +76,7 @@ begin
 fetch: entity work.fetch port map(
 		
 	-- sinais do fetch => sinais do processador 
-	pc_mais_4 	=> pc_in,
+	pc_mais_4 	=> pc_definitivo,
 	clock 		=> clock_pc_md,
 	clock_mem 	=> clock_general,
 	opcode 		=> opcode,
@@ -116,7 +120,8 @@ controle: entity work.controle port map(
 	MemtoReg	=> controle_mem_to_reg,
 	MemWrite => controle_mem_write,
 	ALUSrc 	=> controle_alu_src,
-	RegWrite => controle_reg_write
+	RegWrite => controle_reg_write,
+	Jalrpc	=> controle_jalr
 		
 );		
 
@@ -150,6 +155,15 @@ mux4: entity work.mux port map(
 	A => mem_to_reg,
 	B => jal_aux,
 	X => data_jal
+);
+
+mux5: entity work.mux port map(
+	
+	-- sinais do mux => sinais do processador
+	sel => controle_aux_and2,
+	A => pc_in,
+	B => ula_result,
+	X => pc_definitivo
 );
 
 adder1: entity work.somador port map(

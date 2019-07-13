@@ -25,6 +25,7 @@ begin
 		
 			-- ADD
 			when "0000" => auxZ := std_logic_vector(signed(A) + signed(B));
+								aux_jalr := '1';
 			
 			-- SUB
 			when "0001" => auxZ := std_logic_vector(signed(A) - signed(B));
@@ -91,9 +92,9 @@ begin
 			-- Lui
 			when "1110" => auxZ := std_logic_vector(signed(B));
 			
-			when others => 
-			aux_jalr := '1';
-			auxZ := std_logic_vector(signed(A) + signed(B));
+			when others =>		aux_jalr := '1';
+									auxZ := std_logic_vector(signed(A) + signed(B));
+								
 			
 		end case;
 		

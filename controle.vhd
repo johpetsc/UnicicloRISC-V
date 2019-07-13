@@ -7,7 +7,7 @@ entity controle is
 		opcode			:	in std_logic_vector(6 downto 0);
 		
 		ALUOp			:	out std_logic_vector(1 downto 0);
-		Branch,MemRead,MemtoReg,MemWrite,ALUSrc,RegWrite	:	out std_logic
+		Branch,MemRead,MemtoReg,MemWrite,ALUSrc,RegWrite,Jalrpc	:	out std_logic
 	);
 end controle;
 
@@ -25,6 +25,7 @@ architecture behavioral of controle is
 					MemWrite		<= '0';
 					ALUSrc		<= '0';
 					RegWrite		<= '1';
+					Jalrpc		<= '0';
 					ALUOp			<= "10";
 					
 				when	"0010011" =>	-- Tipo I
@@ -34,6 +35,7 @@ architecture behavioral of controle is
 					MemWrite		<= '0';
 					ALUSrc		<= '1';
 					RegWrite		<= '1';
+					Jalrpc		<= '0';
 					ALUOp			<= "10";
 					
 				when	"0000011" =>	-- LW
@@ -43,6 +45,7 @@ architecture behavioral of controle is
 					MemWrite		<= '0';
 					ALUSrc		<= '1';
 					RegWrite		<= '1';
+					Jalrpc		<= '0';
 					ALUOp			<= "00";
 				
 				when	"0100011" =>	-- SW
@@ -52,6 +55,7 @@ architecture behavioral of controle is
 					MemWrite		<= '1';
 					ALUSrc		<= '1';
 					RegWrite		<= '0';
+					Jalrpc		<= '0';
 					ALUOp			<= "00";
 				
 				when	"1100011" => -- Branch
@@ -61,6 +65,7 @@ architecture behavioral of controle is
 					MemWrite		<= '0';
 					ALUSrc		<= '0';
 					RegWrite		<= '0';
+					Jalrpc		<= '0';
 					ALUOp			<= "01";
 					
 				when	"1101111" => -- Jal
@@ -70,6 +75,7 @@ architecture behavioral of controle is
 					MemWrite		<= '0';
 					ALUSrc		<= '0';
 					RegWrite		<= '1';
+					Jalrpc		<= '0';
 					ALUOp			<= "11";
 					
 				when	"1100111" => -- Jalr
@@ -79,6 +85,7 @@ architecture behavioral of controle is
 					MemWrite		<= '0';
 					ALUSrc		<= '1';
 					RegWrite		<= '1';
+					Jalrpc		<= '1';
 					ALUOp			<= "11";
 					
 				when	"0110111" => -- lui
@@ -88,6 +95,7 @@ architecture behavioral of controle is
 					MemWrite		<= '0';
 					ALUSrc		<= '1';
 					RegWrite		<= '1';
+					Jalrpc		<= '0';
 					ALUOp			<= "11";
 					
 				when others =>	
@@ -97,6 +105,7 @@ architecture behavioral of controle is
 					MemWrite		<= '0';
 					ALUSrc		<= '0';
 					RegWrite		<= '0';
+					Jalrpc		<= '0';
 					ALUOp			<= "00";
 				end case;
 	end process;

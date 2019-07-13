@@ -134,7 +134,7 @@ package	riscv_pkg	is
 			opcode			:	in std_logic_vector(6 downto 0);
 		
 			ALUOp			:	out std_logic_vector(1 downto 0);
-			Branch,MemRead,MemtoReg,MemWrite,ALUSrc,RegWrite	:	out std_logic
+			Branch,MemRead,MemtoReg,MemWrite,ALUSrc,RegWrite,Jalrpc	:	out std_logic
 		);
 	end component;
 

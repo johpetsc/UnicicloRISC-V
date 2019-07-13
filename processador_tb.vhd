@@ -38,12 +38,15 @@ always : PROCESS
 -- variable declarations                                      
 BEGIN                                                         
 	clock_pc_md <= '1';
+	wait for 0.5 ps;
 	clock_general <= '0';
-	wait for 1 ps;
+	wait for 0.5 ps;
 	clock_general <= '1';
+	wait for 0.5 ps;
+	clock_general <= '0';
+	wait for 0.5 ps;
 	clock_pc_md <= '0';
-	wait for 1 ps;
-	
+	wait for 0.5 ps;
 	
 END PROCESS always;                                          
 END processador_arch;
