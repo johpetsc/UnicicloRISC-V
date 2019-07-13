@@ -78,7 +78,7 @@ architecture behavioral of controle is
 					MemtoReg 	<= '0';
 					MemWrite		<= '0';
 					ALUSrc		<= '1';
-					RegWrite		<= '0';
+					RegWrite		<= '1';
 					ALUOp			<= "11";
 					
 				when	"0110111" => -- lui

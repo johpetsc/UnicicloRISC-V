@@ -30,6 +30,7 @@ architecture rtl of processador is
 	signal rd			   : std_logic_vector(4 downto 0) := "00000";
 	signal r_out_2					: std_logic_vector(31 downto 0) := X"00000000";
 	signal rs2_or_rd				: std_logic_vector(4 downto 0) := "00000";
+	signal data_jal				: std_logic_vector(31 downto 0) := X"00000000";
 	
 	-- Controle
 	signal opcode 			: std_logic_vector(6 downto 0) := "0000000";
@@ -81,7 +82,7 @@ fetch: entity work.fetch port map(
 breg_ula: entity work.breg_ula port map(
 		
 	-- sinais do breg_ula => sinais do processador 
-	din 				=> mem_to_reg,
+	din 				=> data_jal,
 	wren 				=> controle_reg_write,
 	clk 				=> clock_general,
 	rst 				=> '0',
@@ -134,6 +135,15 @@ mux3: entity work.mux port map(
 	A => pc_mais_4,
 	B => pc_jump,
 	X => pc_in
+);
+
+mux4: entity work.mux port map(
+	
+	-- sinais do mux => sinais do processador
+	sel => controle_branch,
+	A => mem_to_reg,
+	B => pc_mais_4,
+	X => data_jal
 );
 
 adder1: entity work.somador port map(
