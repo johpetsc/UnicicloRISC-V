@@ -31,6 +31,7 @@ architecture rtl of processador is
 	signal r_out_2					: std_logic_vector(31 downto 0) := X"00000000";
 	signal rs2_or_rd				: std_logic_vector(4 downto 0) := "00000";
 	signal data_jal				: std_logic_vector(31 downto 0) := X"00000000";
+	signal jal_aux					: std_logic_vector(31 downto 0) := X"00000000";
 	
 	-- Controle
 	signal opcode 			: std_logic_vector(6 downto 0) := "0000000";
@@ -58,7 +59,12 @@ architecture rtl of processador is
 	signal imm_result				: signed(31 downto 0) := X"00000000";
 	
 begin
-
+	process(clock_general)
+	begin	
+		if rising_edge(clock_general) then
+			jal_aux <= pc_mais_4;
+		end if;
+	end process;
 	pc_rst <= '0';
 	controle_aux_and <= controle_branch and controle_zero_ula;
 	imm_shiftado_1 <= std_logic_vector(imm_result(31 downto 0));
@@ -142,7 +148,7 @@ mux4: entity work.mux port map(
 	-- sinais do mux => sinais do processador
 	sel => controle_branch,
 	A => mem_to_reg,
-	B => pc_mais_4,
+	B => jal_aux,
 	X => data_jal
 );
 
