@@ -36,11 +36,10 @@ always : PROCESS
 -- optional sensitivity list                                  
 -- (        )                                                 
 -- variable declarations                                      
-BEGIN                                                         
-	clock_pc_md <= '1';
-	wait for 0.5 ps;
+BEGIN
 	clock_general <= '0';
-	wait for 0.5 ps;
+	clock_pc_md <= '1';
+	wait for 1 ps;
 	clock_general <= '1';
 	wait for 0.5 ps;
 	clock_general <= '0';

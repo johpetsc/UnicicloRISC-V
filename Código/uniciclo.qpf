@@ -18,13 +18,13 @@
 #
 # Quartus II 64-Bit
 # Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-# Date created = 19:35:40  July 02, 2019
+# Date created = 21:04:26  July 12, 2019
 #
 # -------------------------------------------------------------------------- #
 
 QUARTUS_VERSION = "13.0"
-DATE = "19:35:40  July 02, 2019"
+DATE = "21:04:26  July 12, 2019"
 
 # Revisions
 
-PROJECT_REVISION = "Uniciclo"
+PROJECT_REVISION = "uniciclo"
