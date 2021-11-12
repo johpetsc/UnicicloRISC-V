@@ -24,7 +24,7 @@ architecture rtl of controleULA is
 	begin
 		if(opin(6 downto 0) = "0110111") then -- lui
 			aux <= "1110"; 
-		elsif(opin(6 downto 0) = "0010011") then -- Tipo I
+		elsif(opin(6 downto 0) = "0010011") then -- Type I
 			case func(2 downto 0) is
 				when "000" => aux <= "0000"; -- addi
 				when "010" => aux <= "1000"; -- slti
